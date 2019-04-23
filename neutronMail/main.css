@@ -1,111 +1,144 @@
 * {
-    /* border: 1px dotted red; */
     box-sizing: border-box;
     margin: 0px;
+}
+header {
+    width: 1800px;
+    margin: auto;
 }
 .header-title {
     background: url(../neutronmail/assets/header/Layer2.png) no-repeat;
     background-size: 100% auto;
-    width: 1800px;
+    width: 100%;
     height: 800px;
     margin: auto;
-    position: relative;
-
+    display: grid;
+    grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr 1fr;
+    grid-template-columns: 10fr 10fr 0.5fr;
+    grid-template-areas: 
+            " l  r  . "
+            " s  s  n "
+            " b  b  n "
+            " x  x  n "
+            " .  .  . "
 }
-.neutron {
-    position: absolute;
-    top: 85px;
-    left: 200px;
+.left {
+    padding-left: 100px;
+    grid-area: l;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: 
+            " n  n  n  n  n  n  n  n "
+            " e  f  i  p  .  .  .  . "
+}
+.right {
+    grid-area: r;
+    padding-right:200px;
 }
 
+ .neutron {
+    grid-area: n;
+    font-size: 30pt;
+    color: rgba(133, 134, 136, 255);
+    font-family: 'Titillium Web', sans-serif;
+    text-align: left;
+    font-weight: bold;
+    line-height: 100%;
+    align-self: center;
+}
+.neutron span {
+    color: #5b4295;
+}
+
+.english, .french, .italian, .polish {
+    font-size: 14pt;
+    color: rgba(133, 134, 136, 255);
+    font-family: 'Titillium Web', sans-serif;
+    text-align: left;
+}
 .english {
-    position: absolute;
-    top: 135px;
-    left: 200px;
+    grid-area: e;
 }
 .french {
-    position: absolute;
-    top: 135px;
-    left: 305px;
+    grid-area: f;
 }
 .italian {
-    position: absolute;
-    top: 135px;
-    left: 400px;
+    grid-area: i;
 }
 .polish {
-    position: absolute;
-    top: 135px;
-    left: 505px;
+    grid-area: p;
 }
-.about {
-    position: absolute;
-    top: 90px;
-    right: 750px;
+.right {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    align-self: center;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 15pt;
+    color: rgba(69, 69, 69, 255);
+    text-align: center;
 }
-.security {
-    position: absolute;
-    top: 90px;
-    right: 650px;
-}
-.blog {
-    position: absolute;
-    top: 90px;
-    right: 550px;
-}
-.careers {
-    position: absolute;
-    top: 90px;
-    right: 450px;
-}
-.support {
-    position: absolute;
-    top: 90px;
-    right: 350px;
-}
-.donate {
-    position: absolute;
-    top: 90px;
-    right: 250px;
-}
+
 .log-in {
-    position: absolute;
-    top: 90px;
-    right: 150px;
+    background: url(../neutronMail/assets/header/sign.png) no-repeat;
+    background-position: 10% 40%;
+
 }
 .sign-up {
-    position: absolute;
-    top: 90px;
-    right: 50px;
+    border-radius: 20px;;
+    background: linear-gradient(to right, #582c7e, #6378cf);
+    color: white;
 }
+
+
 .secure {
-    position: absolute;
-    top: 322px;
-    width: 100%;
-    font-size: 55pt;    
+    grid-area: s;
+    font-size: 25pt;    
     font-family: 'Titillium Web', sans-serif;
-    font-weight: bold;
+    opacity: 0.7;
     color: rgba(69, 69, 69, 255);
     text-align: center;
 }
 .somewhere {
-    position: absolute;
-    top: 392px;
-    width: 100%;
+    grid-area: b;
     font-size: 40pt;
     font-family: 'Titillium Web', sans-serif;
     color: rgba(69, 69, 69, 255);
     text-align: center;
 }
+.networks {
+    grid-area: n;
+}
+.goo {
+    background: url(../neutronMail/assets/header/goo.png) no-repeat;
+    width:20px;
+    height: 20px;
+    margin-top: 10px;
+}
+.fac {
+    background: url(../neutronMail/assets/header/fac.png) no-repeat;
+    width:20px;
+    height: 20px;
+    margin-top: 10px;
+}
+.twi {
+    background: url(../neutronMail/assets/header/twi.png) no-repeat;
+    width:20px;
+    height: 20px;
+    margin-top: 10px;
+}
 .red {
     color: rgba(201, 41, 41, 0.726)
+}
+.account-box {
+    grid-area: x;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    
 }
 .account {
     width: 250px;
     height: 60px;
-    position: absolute;
-    top: 500px;
-    left: 706px;
     font-family: 'Titillium Web', sans-serif;
     font-size: 18pt;
     color: rgba(255, 255, 255, 255);
@@ -116,47 +149,43 @@
     background: linear-gradient(to right, #646c92, #5f2f6a);
 }
 .apple {
-    background-image: url(../neutronmail/assets/header/apple.png);
-    position: absolute;
-    left: 979px;
-    top: 507px;
-    width: 46px;
-    height: 46px;
-    z-index: 24;
+    background: url(../neutronmail/assets/header/apple.png) no-repeat;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
 }
 .playmarket {
-  background-image: url(../neutronmail/assets/header/playmarket.png);
-  position: absolute;
-  left: 1046px;
-  top: 507px;
-  width: 46px;
-  height: 46px;
-  z-index: 25;
+    width: 50px;
+    height: 50px;
+    background: url(../neutronmail/assets/header/playmarket.png) no-repeat;
+    margin: 5px;
 }
 .hover:hover {
     box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
     outline-color: rgba(255, 255, 255, 0);
     outline-offset: 15px;
     text-shadow: 1px 1px 4px #427388; 
+    font-weight: bold;
+    transition: all 0.5s linear;
 }
-.container {
+main {
     width: 1800px;
     margin: auto;
 }
 .main1 {
-    width: 1800px;
+    width: 100%;
     height: 550px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.main1 .privacy,   .main1 .anonymous,   .main1 .encryp {
+.privacy, .anonymous, .encryp {
   flex-basis: 25%;
   height: 75%;
   display: flex;
   flex-direction: column;
 }
-.main1 .physical {
+.physical {
     flex-basis: 75%;
     height: 25%;
     padding-right:25%;
@@ -175,15 +204,15 @@
     font-size: 18pt;
     color: rgba(85, 85, 85, 255);
 }
-.main1 .privacy .top {
+.privacy .top {
     background: url(../neutronmail/assets/main/15.png) no-repeat;
     padding-left: 80px;
 }
-.main1 .encryp .top {
+.encryp .top {
     background: url(../neutronmail/assets/main/15.png) no-repeat;
     padding-left: 80px;
 }
-.main1 .anonymous .top {
+.anonymous .top {
     background: url(../neutronmail/assets/main/15.png) no-repeat;
     padding-left: 80px;
 }
@@ -198,7 +227,7 @@
 .main1 .encryp {
     border-right: 1px solid gray;
 }
-.main1 .physical .top{
+.physical .top{
     font-size: 60pt;
     color: rgba(83, 83, 83, 255);
     text-align: right;
@@ -206,7 +235,7 @@
     margin-top: 0px;
     border-right: 1px solid gray;
 }
-.main1 .physical .bot {
+.physical .bot {
     font-size: 24pt;
     color: rgba(149, 147, 147, 255);
     text-align: right;
@@ -216,6 +245,7 @@
     border-bottom: 1px solid gray;
 }
 .small-grid {
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 5fr;
 }
@@ -254,15 +284,16 @@
     border: 1px solid gray;
 }
 .main2 {
-    width: 1800px;
-    height: 570px;
+    width: 100%;
+    height: 850px;
     display: grid;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
     background: url(../neutronMail/assets/main/lt.png) no-repeat;
+    background-position: 65% 90%;
+    overflow: visible;
 }
 .textbox {
     width: 540px;
-    height: 300px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -334,8 +365,8 @@
     margin-left: 5px;
 }
 .main3 {
-    height: 500px;
-    padding-top: 200px;
+    width: 100%;
+    height: 300px;
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
@@ -361,7 +392,7 @@
     font-size: 18pt;
     border-radius: 30px;
     background: linear-gradient(to right, #646c92, #5f2f6a);
-    box-shadow: 0 0 15px #5f2f6a;
+    box-shadow: 0 0 25px #5f2f6a;
     margin-right: 10px;
 }
 
@@ -376,6 +407,312 @@
     font-size: 18pt;
     border-radius: 30px;
     background: linear-gradient(to right, #36bae1, #5e7bea);
-    box-shadow: 0 0 15px #5e7bea;
+    box-shadow: 0 0 25px #5e7bea;
     margin-left: 10px;
+}
+.main4 {
+    width: 75%;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+    " icons "
+    " contacts ";
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;    
+}
+.icons {
+    padding-top: 1px;
+    grid-area: 'icons';
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.contacts {
+    margin-top: 50px;
+    padding-right: 25px;
+    grid-area: 'contacts';
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+}
+.contacts .email {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 12pt;
+    color: rgba(92, 92, 92, 255);
+}
+.company, .legal, .neutronMail {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 13pt;
+    text-align: right;
+    color: rgba(92, 92, 92, 255);
+}
+.contacts .up {
+    font-size: 15pt;
+    font-weight: bold;
+}
+footer {
+width: 1800px;
+margin: auto;
+padding-left: 10%;
+padding-top: 5%;
+font-family: 'Titillium Web', sans-serif;
+font-size: 13pt;
+color: rgba(92, 92, 92, 255);
+}
+.links {
+    display: flex;
+}
+.link{
+    padding-right: 50px;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 1400px) {
+    header, main, footer {
+        width: auto;
+    }
+    .right {
+        padding-right: 0px;
+    }
+    .header-title {
+        height: 400px;
+    }
+    .main1 {
+        height: 700px;
+    }
+    .left {
+        padding-left: 10px;
+    }
+    .top {
+        font-size: 24pt;
+    }
+    .small {
+        font-size: 14pt;
+    }
+    .physical .top{ 
+        font-size: 30pt; 
+    }
+    .physical .bot{ 
+        font-size: 20pt;
+    }
+    .textbox {
+        margin-left: 10px;
+    }
+    .main4 {
+        border: 0px;
+    }
+    .contacts {
+        margin-top: 50px;
+        padding-right: 25px;
+        grid-area: 'contacts';
+        display: grid;
+        grid-template-columns: 0fr 2fr 0fr 1fr 1.5fr 1.5fr;
+    }
+    .physical .top, .physical .bot, .main1 .encryp {
+        border: 0px;
+    }
+    .main3 .privacy {
+        font-size: 30pt;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .header-title {
+        grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr 1fr;
+        grid-template-columns: 10fr 10fr 3fr;
+        grid-template-areas: 
+                " l  l  r "
+                " s  s  r "
+                " b  b  n "
+                " x  x  n "
+                " .  .  . "
+    }
+    .right {
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: 0;
+        justify-self: start;
+    }
+    .navigation {
+        width: 200px;
+        border: 1px solid gray;
+        text-align: left;
+        border-radius: 20px;;
+        background: linear-gradient(to right, #582c7e, #6378cf);
+        color: white;
+    }
+    .feat-block {
+        display: none;
+    }
+    .trashbox {
+        margin-left: 10%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    header, main, footer {
+        width: 400px;
+
+    }
+    .header-title {
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+                " l  l "
+                " r  r "
+                " s  s "
+                " b  n "
+                " x  x "
+                " .  . "
+    }
+    .left {
+        padding-left: 0px;
+        grid-area: l;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+                    " n  n  n  n "
+                    " e  f  i  p ";
+        width: 100%;
+    }
+    .english, .french, .italian, .polish {
+        display: none;
+    }
+    .navigation {
+        width: 75px;
+        border: 0;
+        text-align: left;
+        border-radius: 0px;
+        background: 0;
+        font-family: 'Titillium Web', sans-serif;
+        color: #5f2f6a;
+        font-weight: bold;
+        align-self: center;
+        justify-self: center;
+    }
+    .right {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+        color: rgba(133, 134, 136, 255);
+        text-align: center;
+        text-shadow: 1px 1px 4px #ffffff; 
+        width: 100%;
+        align-self: center;
+        justify-self: center;
+    }
+    .neutron {
+        grid-area: n;
+        font-size: 50pt;
+        color: rgba(133, 134, 136, 255);
+        font-family: 'Titillium Web', sans-serif;
+        text-align: left;
+        font-weight: bold;
+        line-height: 100%;
+        align-self: center;
+        justify-self: center;
+        padding-top: 50px;
+        padding-bottom: 70px;
+    }
+    .somewhere {
+        font-size: 20pt;
+        width: 400px;
+
+    }
+    .secure {
+        font-size: 1em;
+        width: 400px;
+        opacity: 1;
+        color: #582c7e;
+        text-shadow: 1px 1px 5px white;
+        font-weight: bold;
+        margin: auto;
+        border-top: 2px solid rgb(243, 182, 255);
+        border-bottom: 2px solid rgb(243, 182, 255)
+    }
+    .playmarket, .apple {
+        display: none;
+    }
+    .networks {
+        display: none;
+    }
+    .bot {
+        display: none;
+    }
+    .main1 {
+        flex-direction: column;
+    }
+    .top {
+        margin-top: 0px;
+    }
+    .encryp, .anonymous, .privacy, .physical {
+        height: 150px;
+        flex-basis: 25%;
+    }
+    .main1 {
+        height: 300px;
+    }
+    .physical {
+        display: none;
+    }
+    .small-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        border-top: 2px solid rgb(243, 182, 255);
+        border-bottom: 2px solid rgb(243, 182, 255)
+    }
+    .newspapers {
+        margin: 0px;
+    }
+    .textbox{
+        display: none;
+    }
+    .trashbox {
+        width: 400px;
+        margin: 0px;
+    }
+    .trashbox-header {
+        font-size: 30pt;
+        justify-self: center;
+        align-self: center;
+    }
+    .main2 {
+        background-size: 70%;
+        height: 400px;
+    }
+    .main3 .privacy  {
+        width: 400px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 27px;
+    }
+    .main3 .privacy span {
+        font-size: 12pt;
+    }
+    .donate2 {
+        width:130px;
+    }
+    .icons {
+        display: none;
+
+    }
+    .contacts {
+        grid-template-columns: 1fr;
+    }
+    .neutronMail, .company, .legal {
+        display: none
+    }
+    .main4 {
+        height: 200px;
+    }
+    footer {
+        padding: 0px;
+        background: linear-gradient(to bottom, #ffffff, #5f2f6a);
+    }
+    .link {
+        padding: 10px;
+    } 
 }
