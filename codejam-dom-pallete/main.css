@@ -62,9 +62,11 @@ main {
     width: 100%;
 }
 .menu:hover {
-    background: rgb(39, 39, 39);
+    background-color: rgb(36, 36, 36);
     transition: all 0.5s;
     color: rgb(255, 255, 255);
+    box-shadow: inset 0 0 30px rgb(57, 57, 57);
+    border-radius: 10px;
 }
 .icon {
     width: 50px;
@@ -102,19 +104,19 @@ main {
     width: 60px;
     height: 60px;
 }
-.icon1 {
-    background: url(../codejam-dom-pallete/assets/paint-bucket.png);
+.paint-bucket {
+    background: url(../codejam-dom-pallete/assets/paint-bucket.png) no-repeat;
     background-size: 60px 60px;
 }
-.icon2 {
-    background: url(../codejam-dom-pallete/assets/chose-color.png);
+.chose-color {
+    background: url(../codejam-dom-pallete/assets/chose-color.png) no-repeat;
     background-size: 60px 60px;
 }
-.icon3 {
-    background: url(../codejam-dom-pallete/assets/move.png);
+.move {
+    background: url(../codejam-dom-pallete/assets/move.png) no-repeat;
     background-size: 60px 60px;
 }
-.icon4 {
-    background: url(../codejam-dom-pallete/assets/transform.png);
+.transform {
+    background: url(../codejam-dom-pallete/assets/transform.png) no-repeat;
     background-size: 60px 60px;
 }
