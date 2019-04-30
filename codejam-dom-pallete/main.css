@@ -35,8 +35,40 @@ main {
 }
 .right {
     width: 55%;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas : 
+        " i1  i2  i3 "
+        " i4  i5  i6 "
+        " i7  i8  i9 "
+}
+#item-1{
+    grid-area: i1;
+}
+#item-2{
+    grid-area: i2;
+}
+#item-3{
+    grid-area: i3;
+}
+#item-4{
+    grid-area: i4;
+}
+#item-5{
+    grid-area: i5;
+}
+#item-6{
+    grid-area: i6;
+}
+#item-7{
+    grid-area: i7;
+}
+#item-8{
+    grid-area: i8;
+}
+#item-9{
+    grid-area: i9;
 }
 .top {
     width: 228px;
