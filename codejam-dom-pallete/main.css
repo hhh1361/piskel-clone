@@ -1,6 +1,3 @@
-/* * {
-    border:1px dotted black;
-} */
 body {
     background: rgb(59, 59, 59);
 }
@@ -41,22 +38,85 @@ main {
     display: flex;
     flex-wrap: wrap;
 }
-.top, .bot {
+.top {
     width: 228px;
     height: 246px;
     margin: 80px 0px 80px 50px;
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    display: flex;
+    flex-direction: column;
     border: 5px solid rgb(43, 43, 43);
     box-shadow: 2px 2px 10px rgb(131, 131, 131);
     background: rgb(50, 50, 50);
     border-radius: 10px;
 }
+.bot {
+    width: 228px;
+    height: 123px;
+    margin: 80px 0px 80px 50px;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid rgb(43, 43, 43);
+    box-shadow: 2px 2px 10px rgb(131, 131, 131);
+    background: rgb(50, 50, 50);
+    border-radius: 10px;
+}
+.chose-color {
+    width: 228px;
+    text-align: center; 
+    display: inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    height: 200px;
+    flex-basis: 200px;
+}
+.chose-color-text {
+    width: 228px;
+}
+.pallete {
+    width: 328px;
+    display: flex;
+    flex-direction: row;
+}
+.colors {
+    width: 37px;
+    height: 47px;
+    border: 1px solid white;
+    margin: 2px;
+}
+.color1 {
+    background-color: white; 
+}
+.color2 {
+    background-color: red; 
+}
+.color3 {
+    background-color: orange; 
+}
+.color4 {
+    background-color: yellow; 
+}
+.color5 {
+    background-color: green; 
+}
+.color6 {
+    background-color: rgb(0, 217, 255); 
+}
+.color7 {
+    background-color: blue; 
+}
+.color8 {
+    background-color: rgb(255, 0, 255); 
+}
+.color9 {
+    background-color: black; 
+}
 .menu {
     justify-content: center;
     font-family: 'Titillium Web', sans-serif;
     color: rgb(240, 240, 206);
-    line-height: 55px;
+    line-height: 56px;
+    height: 65px;
     display: flex;
     justify-self: left;
     width: 100%;
@@ -66,7 +126,6 @@ main {
     transition: all 0.5s;
     color: rgb(255, 255, 255);
     box-shadow: inset 0 0 30px rgb(57, 57, 57);
-    border-radius: 30px;
 }
 .icon {
     width: 50px;
@@ -92,7 +151,7 @@ main {
     background: gray;
 }
 #prev {
-    background: green;
+    background: gray;
 }
 #red {
     background: red;
