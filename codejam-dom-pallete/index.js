@@ -1,10 +1,25 @@
+
+/* eslint-disable no-shadow */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-redeclare */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-use-before-define */
+/* eslint-disable block-scoped-var */
+/* eslint-disable vars-on-top */
+/* eslint-disable no-loop-func */
+/* eslint-disable no-var */
+/* eslint-disable no-plusplus */
+/* eslint-disable func-names */
+/* eslint-disable no-undef */
+/* eslint-disable no-param-reassign */
+
 const paintBucket = document.getElementById('paint-bucket');
 const choseColor = document.getElementById('chose-color');
 const move = document.getElementById('move');
 const transform = document.getElementById('transform');
 
-let currentColor; let state; let
-  tempColor;
+let currentColor;
+let tempColor;
 let choseColorStatus = 0;
 let paintBucketStatus = 0;
 let transformStatus = 0;
@@ -29,7 +44,6 @@ paintBucket.onclick = function () {
 
 // Ивенты на кнопке Chose color
 choseColor.onclick = function () {
-  state = 'choseColor';
   if (choseColorStatus < 1) {
     choseColorStatus++;
     choseColor.style.backgroundColor = 'gray';
@@ -48,7 +62,6 @@ choseColor.onclick = function () {
 move.onclick = function () {
   if (moveStatus < 1) {
     moveStatus++;
-    state = 'move';
     move.style.backgroundColor = 'gray';
     move.style.fontSize = '14pt';
   } else {
@@ -64,7 +77,6 @@ move.onclick = function () {
 transform.onclick = function () {
   if (transformStatus < 1) {
     transformStatus++;
-    state = 'transform';
     transform.style.backgroundColor = 'gray';
     transform.style.fontSize = '14pt';
   } else {
@@ -88,7 +100,7 @@ for (var i = 0; i < elements.length; i++) {
 }
 
 
-// Присвоение ивентов на 9 элеентов канваса
+// Присвоение ивентов на 9 элементов канваса
 var elements = document.querySelectorAll('.items');
 for (var i = 0; i < elements.length; i++) {
   elements[i].onclick = function (event) {
@@ -127,8 +139,44 @@ function transformFunction(item) {
     i = 0;
   }
 }
+function moveFunction(item) {
+  item.onmousedown = function (e) {
+    const coords = getCoords(item);
+    const shiftX = e.pageX - coords.left;
+    const shiftY = e.pageY - coords.top;
 
+    item.style.position = 'absolute';
+    moveAt(e);
 
+    item.style.zIndex = 99;
+
+    function moveAt(e) {
+      item.style.left = `${e.pageX - shiftX}px`;
+      item.style.top = `${e.pageY - shiftY}px`;
+    }
+
+    document.onmousemove = function (e) {
+      moveAt(e);
+    };
+
+    item.onmouseup = function () {
+      document.onmousemove = null;
+      item.onmouseup = null;
+    };
+  };
+
+  item.ondragstart = function () {
+    return false;
+  };
+
+  function getCoords(elem) {
+    const box = elem.getBoundingClientRect();
+    return {
+      top: box.top + pageYOffset,
+      left: box.left + pageXOffset,
+    };
+  }
+}
 
 
 // Присвоение ивентов на кнопки
@@ -180,47 +228,3 @@ document.addEventListener('keypress', (event) => {
     }
   }
 });
-
-
-function moveFunction(item) {
-  item.onmousedown = function (e) {
-
-    const coords = getCoords(item);
-    const shiftX = e.pageX - coords.left;
-    const shiftY = e.pageY - coords.top;
-
-    item.style.position = 'absolute';
-    document.body.appendChild(item);
-    moveAt(e);
-
-    item.style.zIndex = 99;
-
-    function moveAt(e) {
-      item.style.left = `${e.pageX - shiftX}px`;
-      item.style.top = `${e.pageY - shiftY}px`;
-    }
-
-    document.onmousemove = function (e) {
-      moveAt(e);
-    };
-
-    item.onmouseup = function () {
-      document.onmousemove = null;
-      item.onmouseup = null;
-    };
-
-  };
-
-  item.ondragstart = function () {
-    return false;
-  };
-
-  function getCoords(elem) {
-    const box = elem.getBoundingClientRect();
-    return {
-      top: box.top + pageYOffset,
-      left: box.left + pageXOffset,
-    };
-  }
-}
-if (foo) { console.log(foo); }
