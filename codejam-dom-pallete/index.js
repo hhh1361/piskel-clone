@@ -5,95 +5,83 @@ var transform = document.getElementById("transform");
 var currentColorIcon = document.getElementById("cur");
 var previousColorIcon = document.getElementById("prev");
 
-var currentColor, choseColorStatus, state, tempColor;
+var currentColor, state, tempColor;
 choseColorStatus = 0;
+paintBucketStatus = 0;
+transformStatus = 0;
+moveStatus = 0;
 
+// Ивенты на кнопке Paint bucket
 paintBucket.onclick = function() {
-    state = 'paintBucket';
-    console.log(state)
+    if (paintBucketStatus < 1) {
+        paintBucketStatus++;
+        state = 'paintBucket';
+        paintBucket.style.backgroundColor = "gray"
+        paintBucket.style.fontSize = "14pt"
+    } else {
+        paintBucketStatus = 0;
+        paintBucket.style.backgroundColor = "rgb(50, 50, 50)";
+        paintBucket.style.fontSize = "11pt"
+        state = 0;
+    }
 }
+
+// Ивенты на кнопке Chose color
 choseColor.onclick = function() {
     state = 'choseColor';
     if (choseColorStatus < 1) {
         choseColorStatus++;
         choseColor.style.backgroundColor = "gray"
         choseColor.style.width = "590px";
-        console.log(state)
+        choseColor.style.fontSize = "14pt"
     } else {
         choseColorStatus = 0;
         choseColor.style.backgroundColor = "rgb(50, 50, 50)";
+        choseColor.style.fontSize = "11pt"
         choseColor.style.width = "228px";
     }
     
 }
+
+// Ивенты на кнопке Move
 move.onclick = function() {
-    state = 'move';
-    console.log(state)
-}
-transform.onclick = function() {
-    state = 'transform';
-    console.log(state)
+    if (moveStatus < 1) {
+        moveStatus++;
+        state = 'move';
+        move.style.backgroundColor = "gray"
+        move.style.fontSize = "14pt"
+    } else {
+        moveStatus = 0;
+        move.style.backgroundColor = "rgb(50, 50, 50)";
+        move.style.fontSize = "11pt"
+        state = 0;
+    }
 }
 
-color1.onclick = function(event) {
-    currentColor = getComputedStyle(event.currentTarget).backgroundColor;
-    tempColor = cur.style.backgroundColor;
-    cur.style.backgroundColor = currentColor;
-    prev.style.backgroundColor = tempColor;
+// Ивенты на кнопке Transform
+transform.onclick = function() {
+    if (transformStatus < 1) {
+        transformStatus++;
+        state = 'transform';
+        transform.style.backgroundColor = "gray"
+        transform.style.fontSize = "14pt"
+    } else {
+        transformStatus = 0;
+        transform.style.backgroundColor = "rgb(50, 50, 50)";
+        transform.style.fontSize = "11pt"
+        state = 0;
+    }
 }
-color2.onclick = function(event) {
-    currentColor = getComputedStyle(event.currentTarget).backgroundColor;
-    tempColor = cur.style.backgroundColor;
-    cur.style.backgroundColor = currentColor;
-    prev.style.backgroundColor = tempColor;
-}
-color3.onclick = function(event) {
-    currentColor = getComputedStyle(event.currentTarget).backgroundColor;
-    tempColor = cur.style.backgroundColor;
-    cur.style.backgroundColor = currentColor;
-    prev.style.backgroundColor = tempColor;
-}
-color4.onclick = function(event) {
-    currentColor = getComputedStyle(event.currentTarget).backgroundColor;
-    tempColor = cur.style.backgroundColor;
-    cur.style.backgroundColor = currentColor;
-    prev.style.backgroundColor = tempColor;
-}
-color5.onclick = function(event) {
-    prev.style.backgroundColor = currentColor;
-    currentColor = getComputedStyle(event.currentTarget).backgroundColor;
-    cur.style.backgroundColor = currentColor;
-    prev.style.backgroundColor = tempColor;
-}
-color6.onclick = function(event) {
-    currentColor = getComputedStyle(event.currentTarget).backgroundColor;
-    tempColor = cur.style.backgroundColor;
-    cur.style.backgroundColor = currentColor;
-    prev.style.backgroundColor = tempColor;
-}
-color7.onclick = function(event) {
-    currentColor = getComputedStyle(event.currentTarget).backgroundColor;
-    tempColor = cur.style.backgroundColor;
-    cur.style.backgroundColor = currentColor;
-    prev.style.backgroundColor = tempColor;
-}
-color8.onclick = function(event) {
-    currentColor = getComputedStyle(event.currentTarget).backgroundColor;
-    tempColor = cur.style.backgroundColor;
-    cur.style.backgroundColor = currentColor;
-    prev.style.backgroundColor = tempColor;
-}
-color9.onclick = function(event) {
-    currentColor = getComputedStyle(event.currentTarget).backgroundColor;
-    tempColor = cur.style.backgroundColor;
-    cur.style.backgroundColor = currentColor;
-    prev.style.backgroundColor = tempColor;
-}
-prev.onclick = function(event) {
-    currentColor = getComputedStyle(event.currentTarget).backgroundColor;
-    tempColor = cur.style.backgroundColor;
-    cur.style.backgroundColor = currentColor;
-    prev.style.backgroundColor = tempColor;
+
+// Присвоение ивентов для кнопок палитры и предыдущего цветов
+var elements = document.querySelectorAll(".colors");
+for (var i = 0; i < elements.length; i++) {
+    elements[i].onclick = function(event) {
+        currentColor = getComputedStyle(event.currentTarget).backgroundColor;
+        tempColor = cur.style.backgroundColor;
+        cur.style.backgroundColor = currentColor;
+        prev.style.backgroundColor = tempColor;
+    }
 }
 
 
@@ -106,61 +94,70 @@ var item6 = document.getElementById("item-6");
 var item7 = document.getElementById("item-7");
 var item8 = document.getElementById("item-8");
 var item9 = document.getElementById("item-9");
-var i = 0;
-item1.onclick = function(event) {
-    if (state == 'paintBucket') {
-        item1.style.backgroundColor = currentColor;
-    } else if (state == 'transform') {
-        if ( i < 1 ) {
-            item1.style.borderRadius = "90%";
-            i++;
-        } else if ( i < 2 ) {
-            item1.style.borderRadius = "0%";
-            item1.style.transform = "rotate(-45deg)"
-            item1.style.width = "176px";
-            item1.style.height = "176px";
-            item1.style.margin = " 34px";
-            i++;
-        } else {
-            item1.style.transform = "rotate(0deg)"
-            item1.style.width = "234px";    
-            item1.style.height = "234px";
-            item1.style.margin = "5px";
-            i = 0;
+
+// Присвоение ивентов на 9 элеентов канваса
+var elements = document.querySelectorAll(".items");
+for (var i = 0; i < elements.length; i++) {
+    elements[i].onclick = function(event) {
+        if (paintBucketStatus == 1) {
+            paintBucketFunction(event.target);
+        } 
+        if (transformStatus == 1) {
+            transformFunction(event.target);
         }
     }
 }
-item2.onclick = function(event) {
-    item2.style.backgroundColor = currentColor;
+
+
+
+
+
+
+
+
+
+function paintBucketFunction(item) {
+    item.style.backgroundColor = currentColor;
 }
-item3.onclick = function(event) {
-    item3.style.backgroundColor = currentColor;
-}
-item4.onclick = function(event) {
-    item4.style.backgroundColor = currentColor;
-}
-item5.onclick = function(event) {
-    item5.style.backgroundColor = currentColor;
-}
-item6.onclick = function(event) {
-    item6.style.backgroundColor = currentColor;
-}
-item7.onclick = function(event) {
-    item7.style.backgroundColor = currentColor;
-}
-item8.onclick = function(event) {
-    item8.style.backgroundColor = currentColor;
-}
-item9.onclick = function(event) {
-    item9.style.backgroundColor = currentColor;
+function transformFunction(item) {
+    if ( i < 1 ) {
+        item.style.borderRadius = "90%";
+        i++;
+    } else if ( i < 2 ) {
+        item.style.borderRadius = "0%";
+        item.style.transform = "rotate(-45deg)"
+        item.style.width = "176px";
+        item.style.height = "176px";
+        item.style.margin = " 34px";
+        i++;
+    } else {
+        item.style.transform = "rotate(0deg)"
+        item.style.width = "234px";    
+        item.style.height = "234px";
+        item.style.margin = "5px";
+        i = 0;
+    }
 }
 
-//var elementList = document.querySelectorAll(".items");
-//let x = 0;
-//while (i < elementList.length) {
-//    elementList[x].addEventListener("click", function(event) {
-//        var target = event.target
-//        action(target);
-//        x++;
-//    })
-//}
+
+
+
+
+// Присвоение ивента на кнопки T/t
+document.addEventListener('keypress', (event) => {
+    const keyName = event.key;
+    if (keyName == 't' || keyName == 'T') {
+        if (transformStatus < 1) {
+            transformStatus++;
+            state = 'transform';
+            transform.style.backgroundColor = "gray"
+            transform.style.fontSize = "14pt"
+        } else {
+            transformStatus = 0;
+            transform.style.backgroundColor = "rgb(50, 50, 50)";
+            transform.style.fontSize = "11pt"
+            state = 0;
+        };
+    }
+  });
+
