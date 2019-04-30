@@ -232,3 +232,4 @@ function moveFunction (item) {
         };
     }
 }
+if(foo) {console.log(foo)}
