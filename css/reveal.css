@@ -241,8 +241,12 @@ body {
     color: currentColor;
     -webkit-transform: scale(0.9999);
             transform: scale(0.9999);
-    transition: color 0.2s ease, opacity 0.2s ease, -webkit-transform 0.2s ease;
-    transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    transition: color 0.2s ease,
+ opacity 0.2s ease,
+ -webkit-transform 0.2s ease;
+    transition: color 0.2s ease,
+ opacity 0.2s ease,
+ transform 0.2s ease;
     z-index: 2;
     pointer-events: auto;
     font-size: inherit;
@@ -1596,3 +1600,24 @@ body {
 
 .zoomed .reveal .roll span:after {
   visibility: hidden; }
+
+.red {
+  color: red;
+  font-size: 1.8em;
+  font-weight: bold; }
+
+.green {
+  color: rgb(60, 214, 60); }
+
+.violet {
+  color: violet; }
+
+.com {
+  color: gray;
+  font-size: 0.8em; }
+
+.left {
+  text-align: left; }
+.small {
+  font-size: 25pt;
+}

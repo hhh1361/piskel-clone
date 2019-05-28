@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="lib/css/monokai.css">
 
 		<!-- Printing and PDF exports -->
+
 		<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
@@ -25,12 +26,191 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<section>Regular expressions </section>
+					<section>
+						<div>regexp = new RegExp(<span class="green">"pattern"</span>, <span class="violet">"flags"</span>);</div>
+					</section>
+					<section>
+						<div>regexp = /<span class = "green">pattern</span>/; <span class="com">// no flags</span></div>
+						<div>regexp = /<span class="green">pattern</span>/<span class="violet">gmi</span>; <span class="com">// with flags g, m and i</span></div> 
+					</section> 
+				</section>
+				<section>
+					<div>let str = "I love JavaScript!"; <span class="com">// will search here</span></div>
+					<div>let regexp = <span class="green">/love/</span>;</div>
+					<div>str.search(regexp)  <span class="com">// 2</span></div>
+				</section>
+				<section>
+					<div>A regular expression consists of a <span class="green">pattern</span> and optional flags: <span class="violet">g, i, m, u, s, y</span>.</div>
+				</section>
+				<section>
+					<section>Methods of RegExp and String</section>
+					<section>
+						<div><span class="red">str.search(reg)</span></div>
+						<div class="left">let str = "A drop of ink may make a million think";</div>
+						<div class="left">str.search( <span class="green">/a/</span><span class="violet">i</span> ) <span class="com">// 0 (first match at zero position)</span></div>
+					</section>
+					<section>
+						<div><span class="red">str.match(reg)</span>,<span class="violet"> no “g” flag</span></div>
+						<div class="left">let str = "Fame is the thirst of youth";</div>
+						<div class="left">result = str.match( <span class="green">/fame/</span><span class="violet">i</span> ) );</div>
+						<div class="left">result[0]     <span class="com">// Fame (the match)</span></div>
+						<div class="left">result.index  <span class="com">// 0 (at the zero position)</span></div>
+						<div class="left">result.input  <span class="com">// "Fame is the thirst of youth" (the string)</span></div>
+					</section>
+					<section>
+						<div><span class="red">str.match(reg)</span>,<span class="violet"> with “g” flag</span></div>
+						<div class="left">let str = "HO-Ho-ho!";;</div>
+						<div class="left">result = str.match( <span class="green">/ho/</span><span class="violet">ig</span> ) );</div>
+						<div class="left">console.log( result ); <span class="com">// HO, Ho, ho (array of 3 matches, case-insensitive)</span></div>
+					</section>
+					<section>
+						<div><span class="red">str.matchAll(regexp)</span></div>
+					</section>
+					<section>
+						<div><span class="red">str.split(regexp|substr, limit)</span></div>
+						<div class="left">'12-34-56'.split('-')<span class="com">// array of [12, 34, 56]</span></div>
+						<div class="left">'12-34-56'.split(<span class="green">/-/</span>)<span class="com">// array of [12, 34, 56]</span></div>
+					</section>
+					<section>
+						<div><span class="red">str.replace(str|reg, str|func)</span></div>
+						<div class="left">'12-34-56'.replace("-", ":") <span class="com">// 12:34-56</span></div>
+						<div class="left">'12-34-56'.replace( <span class="green">/-/</span><span class="violet">g</span>,":" ) <span class="com">// 12:34:56</span></div>
+					</section>
+					<section>
+						<div><span class="red">regexp.exec(str)</span></div>
+						<div class="left"><span class="small">let str = 'A lot about JavaScript at https://javascript.info';</span></div>
+						<div class="left">let regexp = <span class="green">/javascript/</span><span class="violet">ig</span>;</div>
+						<div class="left">let result;</div>
+						<div class="left">while (result = regexp.exec(str)) {<span class="com"></span></div>
+						<div class="left">  alert( `Found ${result[0]} at ${result.index}` );<span class="com"></span></div>
+						<div class="left"><span class="com">  // shows: Found JavaScript at 12, then:</span></div>
+						<div class="left"><span class="com">  // shows: Found javascript at 34</span></div>
+						<div class="left">}</div>
+					</section>
+					<section>
+						<div><span class="red">regexp.exec(str)</span></div>
+						<div class="left">let str = 'A lot about JavaScript at https://javascript.info';</div>
+						<div class="left">let regexp = <span class="green">/javascript/</span><span class="violet">ig</span>;</div>
+						<div class="left">regexp.lastIndex = 13;</div>
+						<div class="left">let result;</div>
+						<div class="left">while (result = regexp.exec(str)) {<span class="com"></span></div>
+						<div class="left">  alert( `Found ${result[0]} at ${result.index}` );<span class="com"></span></div>
+						<div class="left"><span class="com">  // shows: Found javascript at 34</span></div>
+						<div class="left">}</div>
+					</section>
+					<section>
+						<div><span class="red">regexp.test(str)</span></div>
+						<div class="left">let str = "I love JavaScript";</div>
+						<div class="left"><span class="green">/love/</span><span class="violet">i</span>.test(str)<span class="com">// true</span> </div>
+					</section>
+				</section>
+				<section>
+					<section>Character classes</section>
+					<section>
+						<div><span class="green">\d </span>(“d” is from “digit”)</div>
+						<div><span class="green">\s </span>(“s” is from “space”)</div>
+						<div><span class="green">\w </span>(“w” is from “word”)</div>
+					</section>
+					<section>
+							<div><span class="green">\d\s\w </span></div>
+						</section>
+					<section>
+						<div>Word boundary: <span class="green">\b</span></div>
+						<div>"Hello, Java!".match(<span class="green">/\bJava\b/</span>)<span class="com">// Java</span></div>
+						<div>"Hello, JavaScript!".match(<span class="green">/\bJava\b/</span>)<span class="com">// null</span></div>
+					</section>
+					<section>
+						<div><span>Inverse classes</span></div>
+						<div><span class="green">\D</span></div>
+						<div><span class="green">\S</span></div>
+						<div><span class="green">\W</span></div>
+						<div><span class="green">\B</span></div>
+					</section>
+					<section>
+						<div>A dot is any character</div>
+						<div>"Z".match(<span class="green">/./</span>)  <span class="com">// Z	</span></div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<div>Escaping, special characters</div>
+					</section>
+					<section>	
+						<div class="green">[ \ ^ $ . | ? * + ( )</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<div>Sets and ranges [...]</div>
+					</section>
+					<section>
+						<div>Sets</div>
+						<div><span class="green">[tm]op</span></div>
+						<div>"Mop top".match(<span class="green">/[tm]op/</span><span class="violet">gi</span>) <span class="com">// "Mop", "top"</span></div>
+					</section>
+					<section>
+						<div>Ranges</div>
+						<div><span class="green">[a-z] [0-5]</span></div>
+						<div>"Exception 0xAF".match(<span class="green">/x[0-9A-F][0-9A-F]/</span><span class="violet">g</span>) <span class="com">// xAF</span></div>
+					</section>
+					<section>
+						<div>Excluding ranges</div>
+						<div><span class="green">[^aeyo]</span></div>
+						<div><span class="green">[^0-9]</span></div>
+						<div><span class="green">[^\s]</span></div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<div>Quantity {n}</div>
+					</section>
+					<section class="left">
+						<div>The exact count: <span class="red">{5}</span>.</div>
+						<div>"I am 12345 years old".match(<span class="green">/\d{3}/</span>)</span><span class="com">//  "123"</span>
+						</div>
+						<div>The range: <span class="red">{3,5}</span>, match 3-5 times.</div>
+						<div><span class="red">+</span> Means “one or more”, the same as <span class="red">{1,}.</span></div>
+						<div><span class="red">?</span> Means “zero or one”, the same as <span class="red">{0,1}.</span></div>
+						<div><span class="red">*</span>Means “zero or more”, the same as <span class="red">{0,}.</span></div>
+					</section>
+					<section>
+						<div>The lazy mode of quantifier</div>
+						<div><span class="red">?</span></div>
+					</section>
+					<section>\d+ </section>
+					<section>\d+? </section>
+				</section>
+				<section>
+					<section>
+						<div>Capturing groups</div>
+					</section>
+					<section>
+						<div>'Gogogo now!'.match(<span class="green">/(go)+/</span><span class="violet">i</span>) <span class="com">// "Gogogo"</span> </div>
+					</section>
+					<section>
+						<div>Using<span class="green">/go+/</span> we can find goooo or gooooooooo, but not Gogogo</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<div>Alternation (OR) |</div>
+					</section>
+					<section>
+						<div><span class="green">gr(a|e)y</span><span class="com">// gray or grey</span></div>
+						<div><span class="green">gra|ey</span><span class="com"></span>// gra or ey</div>
+					</section>
+				</section>
+				<section>
+					<section id="sec21"></section>
+				</section>
+
 			</div>
 		</div>
 
 		<script src="js/reveal.js"></script>
+		<script src="js/index.js"></script>
 
 		<script>
 			// More info about config & dependencies:

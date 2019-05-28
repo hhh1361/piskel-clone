@@ -5,6 +5,9 @@
  *
  * Copyright (C) 2019 Hakim El Hattab, http://hakim.se
  */
+
+ //import 'index'
+
 (function( root, factory ) {
 	if( typeof define === 'function' && define.amd ) {
 		// AMD. Register as an anonymous module.
