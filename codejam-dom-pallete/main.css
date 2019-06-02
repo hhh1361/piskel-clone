@@ -31,49 +31,14 @@ main {
     height: 750px;
 }
 .left {
-    width: 45%;
-}
-.right {
-    width: 55%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas : 
-        " i1  i2  i3 "
-        " i4  i5  i6 "
-        " i7  i8  i9 "
-}
-#item-1{
-    grid-area: i1;
-}
-#item-2{
-    grid-area: i2;
-}
-#item-3{
-    grid-area: i3;
-}
-#item-4{
-    grid-area: i4;
-}
-#item-5{
-    grid-area: i5;
-}
-#item-6{
-    grid-area: i6;
-}
-#item-7{
-    grid-area: i7;
-}
-#item-8{
-    grid-area: i8;
-}
-#item-9{
-    grid-area: i9;
+    width: 37%;
+    display: flex;
+    flex-direction: row;
 }
 .top {
     width: 228px;
     height: 123px;
-    margin: 80px 0px 80px 50px;
+    margin: 80px 0px 80px 20px;
     display: flex;
     flex-direction: column;
     border: 5px solid rgb(43, 43, 43);
@@ -84,7 +49,7 @@ main {
 .bot {
     width: 228px;
     height: 123px;
-    margin: 80px 0px 80px 50px;
+    margin: 80px 0px 80px 20px;
     display: flex;
     flex-direction: column;
     border: 5px solid rgb(43, 43, 43);
@@ -109,6 +74,7 @@ main {
     width: 328px;
     display: flex;
     flex-direction: row;
+    z-index: 999999;
 }
 .colors {
     width: 37px;
@@ -211,17 +177,46 @@ main {
     background: url(../codejam-dom-pallete/assets/transform.png) no-repeat;
     background-size: 60px 60px;
 }
-
+.right {
+    display: flex;
+    flex-direction: row;
+}
+#preview {
+    background-color:rgb(209, 209, 191); 
+    box-shadow: 0px 0px 30px 0px rgb(209, 208, 162);
+    border: 1px solid #ccc; 
+    margin:10px;
+    height: 224px;
+}
+#newSlide {
+    background-color:rgb(209, 209, 191); 
+    box-shadow: 0px 0px 30px 0px rgb(209, 208, 162);
+    border: 1px solid #ccc; 
+    margin:0px;
+    height: 224px;
+}
 #myCanvas {
     background-color:rgb(209, 209, 191); 
     box-shadow: 0px 0px 30px 0px rgb(209, 208, 162);
     border: 1px solid #ccc; 
     margin:10px;
+    height: 640px;
 }
-#animate {
-    width: 50px;
-    height: 30px;
-    background-color: wheat;
-    line-height: 30px;
+.frame {
+    height: 800px;
+    border: 1px solid black;
+    margin: auto;
+}
+.frames {
+    width: 226px;
+    height: 226px;
+    margin: auto;
+}
+.frames {
+    border: 1px solid black;
+}
+.plus {
+    line-height: 224px;
     text-align: center;
+    font-size: 72pt;
 }

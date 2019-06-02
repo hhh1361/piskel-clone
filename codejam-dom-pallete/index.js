@@ -93,13 +93,22 @@ canvas.addEventListener('mousemove', function move(e) {
         );
       });
     });
+
+
+    const canvasNew = document.getElementById('newSlide');
+    const contextNew = canvasNew.getContext('2d');
+    array.forEach((row) => {
+      row.forEach(() => {
+        contextNew.fillRect(
+          Math.floor(mouse.x / 20) * 7, Math.floor(mouse.y / 20) * 7, 7, 7,
+        );
+      });
+    });
   }
 });
 canvas.addEventListener('mouseup', () => {
   draw = false;
 });
 
-const animate = document.getElementById('animate');
-animate.addEventListener('click', () => {
-  console.log('hello');
-});
+
+const plus = document.getElementById('plus');
