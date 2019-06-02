@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-    <title>codejam-dom-pallete</title>
+    <title>codejam animated-player</title>
 </head>
 <body>
   <header>
     <div class="header">
       <div class="lines"></div>
-      <div class="text">CodeJam - Pallete</div>
+      <div class="text">codejam animated-player</div>
       <div class="dots"></div>
     </div>
   </header>
   <main>
     <div class="left">
       <div class="top">
-        <button id="paint-bucket" class="menu paint-bucket">Paint bucket</button> 
+        <button id="pen" class="menu pen">Pen</button> 
         <button id="chose-color" class="menu chose-color">
           <div class="chose-color-text">Chose color</div>
         <div class="pallete">
@@ -46,8 +46,9 @@
       </div>
     </div>
     <div class="right">
-      <canvas id="myCanvas" width="700" height="700">
+      <canvas id="myCanvas" width="640" height="640">
       </canvas> 
+      <div id="animate">Start</div>
     </div>
   </main>
 

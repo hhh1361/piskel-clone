@@ -1,25 +1,31 @@
+/* eslint-disable no-console */
 /* eslint-disable no-plusplus */
-const paintBucket = document.getElementById('paint-bucket');
+const pen = document.getElementById('pen');
 const choseColor = document.getElementById('chose-color');
 const cur = document.getElementById('cur');
 const prev = document.getElementById('prev');
+const canvas = document.getElementById('myCanvas');
+const context = canvas.getContext('2d');
+const mouse = { x: 0, y: 0 };
 
-
+let draw = false;
 let currentColor;
 let tempColor;
 let state;
+const thickness = 20;
+const canvasSize = 32;
 
 
-// Paint bucket :hover
-paintBucket.addEventListener('click', () => {
-  if (state !== 'paintBucket') {
-    state = 'paintBucket';
-    paintBucket.style.backgroundColor = 'gray';
+// Pen :hover
+pen.addEventListener('click', () => {
+  if (state !== 'pen') {
+    state = 'pen';
+    pen.style.backgroundColor = 'gray';
     choseColor.style.backgroundColor = 'rgb(50, 50, 50)';
     choseColor.style.width = '228px';
   } else {
     state = 'inactive';
-    paintBucket.style.backgroundColor = 'rgb(50, 50, 50)';
+    pen.style.backgroundColor = 'rgb(50, 50, 50)';
   }
 });
 
@@ -29,7 +35,7 @@ choseColor.addEventListener('click', () => {
   if (state !== 'choseColor') {
     state = 'choseColor';
     choseColor.style.backgroundColor = 'gray';
-    paintBucket.style.backgroundColor = 'rgb(50, 50, 50)';
+    pen.style.backgroundColor = 'rgb(50, 50, 50)';
     choseColor.style.width = '590px';
   } else {
     state = 'inactive';
@@ -39,7 +45,7 @@ choseColor.addEventListener('click', () => {
 });
 
 
-// Присвоение ивентов для кнопок палитры и предыдущего цветов
+// pallete
 const elements = document.querySelectorAll('.colors');
 for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener('click', (event) => {
@@ -50,36 +56,50 @@ for (let i = 0; i < elements.length; i++) {
   });
 }
 
+// creating 32x32 field
+let array;
+function arrayCreator(n) {
+  array = new Array(n);
+  for (let i = 0; i < array.length; i++) {
+    array[i] = new Array(n);
+  }
+}
+arrayCreator(canvasSize);
 
-const canvas = document.getElementById('myCanvas');
-const context = canvas.getContext('2d');
-context.lineWidth = 10;
-context.lineCap = 'round';
-const mouse = { x: 0, y: 0 };
-let draw = false;
 
 canvas.addEventListener('mousedown', function dawn(e) {
-  console.log(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
   mouse.x = e.pageX - this.offsetLeft;
   mouse.y = e.pageY - this.offsetTop;
-  draw = true;
-  context.beginPath();
-  context.strokeStyle = currentColor;
-  context.moveTo(mouse.x, mouse.y);
+  if (state === 'pen') {
+    draw = true;
+    array[Math.floor(mouse.x / 20)][Math.floor(mouse.y / 20)] = { color: currentColor };
+    context.fillRect(
+      Math.floor(mouse.x / 20) * 20, Math.floor(mouse.y / 20) * 20, thickness, thickness,
+    );
+    context.fillStyle = currentColor;
+  }
 });
 canvas.addEventListener('mousemove', function move(e) {
   if (draw === true) {
     mouse.x = e.pageX - this.offsetLeft;
     mouse.y = e.pageY - this.offsetTop;
-    context.lineTo(mouse.x, mouse.y);
-    context.stroke();
+
+    array[Math.floor(mouse.x / 20)][Math.floor(mouse.y / 20)] = { color: currentColor };
+
+    array.forEach((row) => {
+      row.forEach(() => {
+        context.fillRect(
+          Math.floor(mouse.x / 20) * 20, Math.floor(mouse.y / 20) * 20, thickness, thickness,
+        );
+      });
+    });
   }
 });
-canvas.addEventListener('mouseup', function up(e) {
-  mouse.x = e.pageX - this.offsetLeft;
-  mouse.y = e.pageY - this.offsetTop;
-  context.lineTo(mouse.x, mouse.y);
-  context.stroke();
-  context.closePath();
+canvas.addEventListener('mouseup', () => {
   draw = false;
+});
+
+const animate = document.getElementById('animate');
+animate.addEventListener('click', () => {
+  console.log('hello');
 });

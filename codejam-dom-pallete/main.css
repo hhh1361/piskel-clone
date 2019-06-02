@@ -195,7 +195,7 @@ main {
     width: 60px;
     height: 60px;
 }
-.paint-bucket {
+.pen {
     background: url(../codejam-dom-pallete/assets/paint-bucket.png) no-repeat;
     background-size: 60px 60px;
 }
@@ -217,4 +217,11 @@ main {
     box-shadow: 0px 0px 30px 0px rgb(209, 208, 162);
     border: 1px solid #ccc; 
     margin:10px;
+}
+#animate {
+    width: 50px;
+    height: 30px;
+    background-color: wheat;
+    line-height: 30px;
+    text-align: center;
 }
