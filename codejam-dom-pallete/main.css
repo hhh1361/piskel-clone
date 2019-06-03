@@ -9,7 +9,8 @@ header, main {
 .header {
     height: 48px;
     display: flex;
-    margin: 20px 0px 50px 0px;;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
 }
 .lines {
     width: 48px;
@@ -185,7 +186,7 @@ main {
 }
 #preview {
     background-color:rgb(209, 209, 191); 
-    box-shadow: 0px 0px 30px 0px rgb(209, 208, 162);
+    box-shadow: 0px 0px 5px 0px rgb(209, 208, 162);
     border: 1px solid #ccc; 
     margin:10px;
     height: 224px;
@@ -193,7 +194,7 @@ main {
 
 #myCanvas {
     background-color:rgb(209, 209, 191); 
-    box-shadow: 0px 0px 30px 0px rgb(209, 208, 162);
+    box-shadow: 0px 0px 15px 0px rgb(209, 208, 162);
     border: 1px solid #ccc; 
     margin:10px;
     height: 640px;
@@ -205,8 +206,8 @@ main {
 }
 .frames {
     margin: 0px;
-    height: 764px;
-    overflow: hidden;
+    height: 702px;
+    display: scroll;
 }
 .frame {
     width: 226px;
@@ -214,11 +215,12 @@ main {
     margin: auto;
     border: 1px solid black;
     background-color:rgb(209, 209, 191); 
-    box-shadow: 0px 0px 30px 0px rgb(209, 208, 162);
+    box-shadow: 0px 0px 5px 0px rgb(209, 208, 162);
     border: 1px solid #ccc; 
     margin: 5px;
     height: 224px;
     overflow: hidden;
+    z-index: 100;
 }
 
 .plus {
@@ -230,8 +232,16 @@ main {
     margin: auto;
     border: 1px solid black;
     background-color:rgb(209, 209, 191); 
-    box-shadow: 0px 0px 30px 0px rgb(209, 208, 162);
+    box-shadow: 0px 0px 5px 0px rgb(209, 208, 162);
     border: 1px solid #ccc; 
     margin: 5px;
     height: 224px;
+    z-index: 999;
 }
+
+.container {
+    height: 702px;
+    z-index: 1;
+    overflow: hidden;
+    display: scroll;
+  }
