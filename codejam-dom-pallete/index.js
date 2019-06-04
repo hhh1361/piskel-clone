@@ -222,7 +222,6 @@ const preview = document.getElementById('preview');
 const ctx = preview.getContext('2d');
 const on = document.getElementById('on');
 on.addEventListener('click', () => {
-  console.log('hello');
   let i = 0;
   timerId = setInterval(() => {
     const x = document.getElementsByClassName('frame');
@@ -234,14 +233,53 @@ on.addEventListener('click', () => {
     }
   }, 1000 / fps.value);
 });
-console.log(fps.value);
 
 const off = document.getElementById('off');
 off.addEventListener('click', () => {
-  console.log(1);
-  setTimeout(() => {
-    console.log(2);
-    clearInterval(timerId);
-    console.log(3);
-  }, 1);
+  clearInterval(timerId);
+});
+
+fps.addEventListener('mouseenter', () => {
+  const inputValue = document.createElement('div');
+  const optionsContainer = document.getElementById('previewContainer');
+  optionsContainer.appendChild(inputValue);
+  inputValue.innerHTML = `FPS: ${fps.value}`;
+  inputValue.style.width = '224px';
+  inputValue.style.height = '50px';
+  inputValue.id = 'inputValue';
+  inputValue.style.fontSize = '22pt';
+  inputValue.style.fontFamily = "'Titillium Web', sans-serif";
+  inputValue.style.marginLeft = '5px';
+  inputValue.style.color = 'white';
+  inputValue.style.backgroundColor = '#4bf36f';
+  inputValue.style.borderRadius = '0 0 100% 100%';
+  inputValue.style.boxShadow = 'inset 0px 0px 40px 0px rgb(209, 209, 191)';
+  inputValue.style.textAlign = 'center';
+  inputValue.style.lineHeight = '50px';
+});
+fps.addEventListener('mousemove', () => {
+  const inputValue = document.getElementById('inputValue');
+  inputValue.innerHTML = `FPS: ${fps.value}`;
+});
+fps.addEventListener('click', () => {
+  const inputValue = document.getElementById('inputValue');
+  inputValue.innerHTML = `FPS: ${fps.value}`;
+
+  // reapply interval
+  clearInterval(timerId);
+  let i = 0;
+  timerId = setInterval(() => {
+    const x = document.getElementsByClassName('frame');
+    previewArray = Array.from(x);
+    ctx.clearRect(0, 0, 224, 224);
+    ctx.drawImage(previewArray[i++], 0, 0);
+    if (i === previewArray.length) {
+      i = 0;
+    }
+  }, 1000 / fps.value);
+});
+fps.addEventListener('mouseleave', () => {
+  const optionsContainer = document.getElementById('previewContainer');
+  const inputValue = document.getElementById('inputValue');
+  optionsContainer.removeChild(inputValue);
 });
