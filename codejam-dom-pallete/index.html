@@ -60,8 +60,21 @@
     <div class="right">
       <canvas id="myCanvas" width="640" height="640">
       </canvas> 
-      <canvas id="preview" width="224" height="224">
-        </canvas> 
+      <div class="previewContainer">
+        <canvas id="preview" width="224" height="224">
+        </canvas>
+        <div class="previewOptions">
+          <div class="on" id="on">
+            ON
+          </div>
+          <div class="off" id="off">
+            OFF
+          </div>
+        </div> 
+        <input type="range" id="FPS" min="1" max="32" step="1">
+
+      </div>
+
     </div>
   </main>
 

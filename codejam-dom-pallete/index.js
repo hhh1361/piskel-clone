@@ -9,7 +9,6 @@ const canvas = document.getElementById('myCanvas');
 const context = canvas.getContext('2d');
 const mouse = { x: 0, y: 0 };
 const frames = document.getElementById('frames');
-const FPS = 3;
 const container = document.getElementById('container');
 
 
@@ -23,6 +22,8 @@ let array;
 let previewArray;
 let num = 1;
 let num2 = 1;
+const fps = document.getElementById('FPS');
+let timerId;
 
 
 // Pen :hover
@@ -215,15 +216,15 @@ plus.addEventListener('click', () => {
   }
 });
 
+
+// preview frame
 const preview = document.getElementById('preview');
 const ctx = preview.getContext('2d');
-preview.addEventListener('click', () => {
+const on = document.getElementById('on');
+on.addEventListener('click', () => {
   console.log('hello');
-
-
-  // начать повторы с интервалом 2 сек
   let i = 0;
-  const timerId = setInterval(() => {
+  timerId = setInterval(() => {
     const x = document.getElementsByClassName('frame');
     previewArray = Array.from(x);
     ctx.clearRect(0, 0, 224, 224);
@@ -231,5 +232,16 @@ preview.addEventListener('click', () => {
     if (i === previewArray.length) {
       i = 0;
     }
-  }, 100);
+  }, 1000 / fps.value);
+});
+console.log(fps.value);
+
+const off = document.getElementById('off');
+off.addEventListener('click', () => {
+  console.log(1);
+  setTimeout(() => {
+    console.log(2);
+    clearInterval(timerId);
+    console.log(3);
+  }, 1);
 });
