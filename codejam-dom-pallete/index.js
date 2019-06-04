@@ -173,6 +173,7 @@ plus.addEventListener('click', () => {
       del.style.transition = 'all, 1s';
       del.onclick = (event) => {
         frames.removeChild(event.currentTarget.nextSibling.nextSibling);
+        context.clearRect(0, 0, canvas.width, canvas.height);
       };
       frames.insertBefore(del, frameAray[i]);
 
@@ -214,11 +215,21 @@ plus.addEventListener('click', () => {
   }
 });
 
-// const preview = document.getElementById('preview');
-// preview.addEventListener('click', () => {
-//  const ctx = preview.getContext('2d');
-//  ctx.drawImage(previewArray[0], 0, 0);
-//  let timer = setInterval(() => {
-//
-//  }, 1000/FPS);
-// });
+const preview = document.getElementById('preview');
+const ctx = preview.getContext('2d');
+preview.addEventListener('click', () => {
+  console.log('hello');
+
+
+  // начать повторы с интервалом 2 сек
+  let i = 0;
+  const timerId = setInterval(() => {
+    const x = document.getElementsByClassName('frame');
+    previewArray = Array.from(x);
+    ctx.clearRect(0, 0, 224, 224);
+    ctx.drawImage(previewArray[i++], 0, 0);
+    if (i === previewArray.length) {
+      i = 0;
+    }
+  }, 100);
+});
