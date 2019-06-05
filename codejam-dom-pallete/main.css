@@ -257,15 +257,15 @@ main {
     line-height: 50px;
     font-family: 'Titillium Web', sans-serif;
     font-weight: bold;
-    border-radius: 10%;
+    border-radius: 10px;
     margin: 0px 3px;
     cursor: pointer;
 }
 .on {
-    background-color: rgb(75, 243, 111);
+    background-color: #4bf36f;
 }
 .off {
-    background-color: rgb(243, 75, 75);
+    background-color: #f34b4b;
 }
 
 
@@ -275,6 +275,19 @@ main {
     cursor: pointer;
   }
 
+  .fullscreen {
+    width: 224px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #feffdc8e;
+}
 
 
 

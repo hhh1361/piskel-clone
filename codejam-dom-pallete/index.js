@@ -283,3 +283,9 @@ fps.addEventListener('mouseleave', () => {
   const inputValue = document.getElementById('inputValue');
   optionsContainer.removeChild(inputValue);
 });
+
+// fullscreen
+const fullscreen = document.getElementById('fullscreen');
+fullscreen.addEventListener('click', () => {
+  preview.requestFullscreen();
+});
