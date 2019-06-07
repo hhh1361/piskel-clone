@@ -75,8 +75,8 @@ function arrayCreator(n) {
 }
 arrayCreator(canvasSize);
 
-
-canvas.addEventListener('mousedown', function dawn(e) {
+// main canvas drawing functions
+canvas.addEventListener('mousedown', function down(e) {
   mouse.x = e.pageX - this.offsetLeft;
   mouse.y = e.pageY - this.offsetTop;
   if (state === 'pen') {
@@ -88,6 +88,7 @@ canvas.addEventListener('mousedown', function dawn(e) {
     );
   }
 });
+// main canvas drawing functions
 canvas.addEventListener('mousemove', function move(e) {
   if (draw === true) {
     mouse.x = e.pageX - this.offsetLeft;
@@ -116,13 +117,14 @@ canvas.addEventListener('mousemove', function move(e) {
     });
   }
 });
+// main canvas drawing functions
 canvas.addEventListener('mouseup', () => {
   draw = false;
   const x = document.getElementsByClassName('frame');
   previewArray = Array.from(x);
 });
 
-
+// button "+" functions
 const plus = document.getElementById('plus');
 plus.addEventListener('click', () => {
   const createCanvas = document.createElement('canvas');
@@ -130,10 +132,14 @@ plus.addEventListener('click', () => {
   createCanvas.height = 224;
   createCanvas.className = `frame _${num++}`;
   const deleteCurrent = document.getElementById('current');
-  deleteCurrent.removeAttribute('id');
+  if (deleteCurrent !== null) {
+    console.log(deleteCurrent);
+    deleteCurrent.removeAttribute('id');
+  }
   createCanvas.id = 'current';
 
   frames.appendChild(createCanvas);
+  console.log('ok');
   context.clearRect(0, 0, canvas.width, canvas.height);
 
 
@@ -152,6 +158,7 @@ plus.addEventListener('click', () => {
       }
     };
 
+    // events on frames library
     frameAray[i].onmouseenter = () => {
     // delete :hover
       const del = document.createElement('div');
