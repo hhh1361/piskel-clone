@@ -133,38 +133,43 @@ plus.addEventListener('click', () => {
   createCanvas.className = `frame _${num++}`;
   const deleteCurrent = document.getElementById('current');
   if (deleteCurrent !== null) {
-    console.log(deleteCurrent);
     deleteCurrent.removeAttribute('id');
   }
   createCanvas.id = 'current';
-
   frames.appendChild(createCanvas);
-  console.log('ok');
   context.clearRect(0, 0, canvas.width, canvas.height);
 
 
   let collection = document.getElementsByClassName('frame');
-  let frameAray = Array.from(collection);
+  let frameArray = Array.from(collection);
   if (array.length > 4) {
-    frames.style.transform = `translateY(-${(frameAray.length - 3) * 241}px)`;
+    frames.style.transform = `translateY(-${(frameArray.length - 3) * 241}px)`;
   }
-  for (let i = 0; i < frameAray.length; i++) {
-    frameAray[i].onclick = () => {
-      container.removeChild(frameAray[i]);
+  for (let i = 0; i < frameArray.length; i++) {
+    frameArray[i].onclick = () => {
+      container.removeChild(frameArray[i]);
       collection = document.getElementsByClassName('box');
-      frameAray = Array.from(collection);
-      if (frameAray.length > 4) {
-        frames.style.transform = `translateY(-${(frameAray.length - 3) * 241}px)`;
+      frameArray = Array.from(collection);
+      if (frameArray.length > 4) {
+        frames.style.transform = `translateY(-${(frameArray.length - 3) * 241}px)`;
       }
     };
 
     // events on frames library
-    frameAray[i].onmouseenter = () => {
+    frameArray[i].onclick = () => {
+      const changeCurrent = document.getElementById('current');
+      if (changeCurrent !== null) {
+        changeCurrent.removeAttribute('id');
+        frameArray[i].id = 'current';
+      }
+      createCanvas.id = 'current';
+    };
+    frameArray[i].onmouseenter = () => {
     // delete :hover
       const del = document.createElement('div');
       del.id = `delete_${num2}`;
-      del.style.zIndex = '999';
       del.innerHTML = 'Delete';
+      del.style.zIndex = '999';
       del.style.fontSize = '32pt';
       del.style.fontFamily = "'Titillium Web', sans-serif";
       del.style.width = '223px';
@@ -183,7 +188,7 @@ plus.addEventListener('click', () => {
         frames.removeChild(event.currentTarget.nextSibling.nextSibling);
         context.clearRect(0, 0, canvas.width, canvas.height);
       };
-      frames.insertBefore(del, frameAray[i]);
+      frames.insertBefore(del, frameArray[i]);
 
       // copy :hover
       const copy = document.createElement('div');
@@ -207,10 +212,13 @@ plus.addEventListener('click', () => {
       copy.onclick = (event) => {
         const copy1 = event.currentTarget.nextSibling.cloneNode(true);
         frames.insertBefore(copy1, event.currentTarget.nextSibling);
+        const copy1context = copy1.getContext('2d');
+        copy1context.drawImage(frameArray[i], 0, 0);
+        copy1.id = null;
       };
-      frames.insertBefore(copy, frameAray[i]);
+      frames.insertBefore(copy, frameArray[i]);
     };
-    frameAray[i].onmouseleave = () => {
+    frameArray[i].onmouseleave = () => {
       const del = document.getElementById(`delete_${num2 - 1}`);
       setTimeout(() => {
         frames.removeChild(del);
