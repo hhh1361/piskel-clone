@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <title>Piskel Clone</title>
+</head>
+<body>
+  <header>
+    <div class="header">
+      <div class="text">PiSKEL</div>
+    </div>
+  </header>
+  <main>
+    <div class="leftSection">
+      <div class="thickness">
+          <div class="penSize"><div class="square square1"></div></div>
+          <div class="penSize"><div class="square square2"></div></div>
+          <div class="penSize"><div class="square square3"></div></div>
+          <div class="penSize"><div class="square square4"></div></div>
+      </div>
+      <div class="instrumentsContainer">
+          <div class="instruments instrument1"></div>
+          <div class="instruments instrument2"></div>
+          <div class="instruments instrument3"></div>
+          <div class="instruments instrument4"></div>
+          <div class="instruments instrument5"></div>
+          <div class="instruments instrument6"></div>
+          <div class="instruments instrument7"></div>
+          <div class="instruments instrument8"></div>
+          <div class="instruments instrument9"></div>
+          <div class="instruments instrument10"></div>
+          <div class="instruments instrument11"></div>
+          <div class="instruments instrument12"></div>
+          <div class="instruments instrument13"></div>
+          <div class="instruments instrument14"></div>
+          <div class="instruments instrument15"></div>
+      </div>
+      <div class="colors">
+          <div class="menu currentColor">
+            <div id="currentColor"></div>
+            <div class="menuText">Current color</div>
+          </div>
+          <div class="menu colors previousColor">
+            <div id="previousColor"></div>
+            <div class="menuText">Previous color</div>
+          </div>
+      </div>
+    </div>
+    
+    <div class="frameList">
+      <div class="container" id="container">
+        <div class="frames" id="frames">
+          <div class="frame frame_0" id="frame_0">
+            <canvas class="canvas canvas_0" id="canvas_0" width="112" height="112">
+            </canvas>
+            <div class="framesFunctions copy">copy</div>
+            <div class="framesFunctions delete">delete</div>
+            <div class="framesFunctions move">move</div>
+            <div class="framesFunctions number">number</div>
+          </div>
+          <div class="plus" id="plus">+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="center">
+      <canvas id="myCanvas" width="640" height="640">
+      </canvas> 
+    </div>
+
+    <div class="previewContainer" id="previewContainer">
+      <div class="fullscreen" id="fullscreen">
+        Fullscreen
+      </div>
+      <canvas id="preview" width="224" height="224">
+      </canvas>
+      <div class="previewOptions" id="previewOptions">
+        <div class="on" id="on">
+          ON
+        </div>
+        <div class="off" id="off">
+          OFF
+        </div>
+      </div> 
+      <input type="range" id="FPS" min="1" max="32" step="1">
+      
+    </div>
+
+
+  </main>
+
+
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
