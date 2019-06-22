@@ -10,7 +10,7 @@ body {
 
     box-sizing: border-box;
 
-}   
+}
 main {
     display: flex;
     width: 1440px;
@@ -230,7 +230,45 @@ main {
     cursor: pointer;
 }
 
+.center {
+  width: 640px;
+  height: 640px;
+  display: flex;
+  flex-direction: column;
+}
+.canvasSizeRequest {
+  font-size: 40px;
+  font-family: 'Titillium Web', sans-serif;
+  width: 541px;
+  height: 40px;
+  line-height: 40px;
+  margin: 50px auto;
+}
+.canvasSize {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border: 1px solid gray;
+  font-size: 30px;
+  font-family: 'Titillium Web', sans-serif;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+.canvasSize:hover {
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  background-color:white;
+  color:black;
+  box-shadow: 2px 2px 1px black;
+}
 
+
+.mainCanvas {
+  box-shadow: 0px 0px 10px 0px rgb(209, 208, 162);
+  margin:10px;
+}
 
 
 
@@ -238,7 +276,7 @@ main {
 
 
 .frameList {
-    margin: 0 5px;   
+    margin: 0 5px;
 }
 .frame {
     position: relative;
@@ -307,7 +345,7 @@ main {
     margin: 0px 5px;
     width: 226px;
     height: 250px;
-    background-color: rgb(47, 47, 47); 
+    background-color: rgb(47, 47, 47);
 }
 .fpsContainer {
     display: flex;
@@ -344,7 +382,7 @@ main {
     background-position: -46px -182px;
 }
 .resize {
-    background-image: url(../src/assets/icons.png); 
+    background-image: url(../src/assets/icons.png);
     background-position: -138px -182px;
 }
 .save {

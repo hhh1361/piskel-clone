@@ -45,7 +45,7 @@
         <div class="swapColor"></div>
       </div>
     </div>
-    
+
     <div class="frameList">
       <div class="container" id="container">
         <div class="frames" id="frames">
@@ -64,9 +64,14 @@
       </div>
     </div>
 
-    <div class="center">
-      <canvas id="myCanvas" width="640" height="640">
-      </canvas> 
+    <div class="center" id="center">
+      <div class="canvasSizeTemp" id="canvasSizeTemp">
+        <div class="canvasSizeRequest">
+            What canvas size do you prefer?</div>
+        <div class="canvasSize">32</div>
+        <div class="canvasSize">64</div>
+        <div class="canvasSize">128</div>
+      </div>
     </div>
 
     <div class="previewContainer" id="previewContainer">
@@ -75,7 +80,7 @@
       <div class="fpsContainer" id="fpsContainer">
         <div class="fpsText">FPS</div>
         <input type="range" class="fpsRange" min="1" max="24" step="1">
-      </div> 
+      </div>
 
     </div>
 
@@ -93,6 +98,6 @@
 
 
 
-    <script src="index.js"></script>
+    <script src="../dist/app.bundle.js"></script>
 </body>
 </html>
