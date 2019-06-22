@@ -1,0 +1,363 @@
+
+body {
+    background: #1D1D1D;
+    margin : 0;
+    cursor : default;
+    font-family: Arial;
+    color: white;
+  }
+* {
+
+    box-sizing: border-box;
+
+}   
+main {
+    display: flex;
+    width: 1440px;
+    margin: auto;
+}
+.leftSection {
+    width: 100px;
+    margin: auto 5px;
+}
+.thickness {
+    display: flex;
+    margin: 5px auto;
+    width: 90px;
+    height: 24px;
+}
+.penSize {
+    width: 20px;
+    height: 20px;
+    border: 2px solid gray;
+    padding: auto;
+    margin: 1px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.penSize:hover {
+    border-color: rgb(201, 201, 201);
+}
+.square {
+    background-color: white;
+    margin: auto;
+    text-align: center;
+
+}
+.square1 {
+    width: 5px;
+    height: 5px;
+}
+.square2 {
+    width: 7px;
+    height: 7px;
+}
+.square3 {
+    width: 9px;
+    height: 9px;
+}
+.square4 {
+    width: 11px;
+    height: 11px;
+}
+.instrumentsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100px;
+}
+.instruments {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    cursor: pointer;
+}
+.instrument1 {
+    background-image: url(../src/assets/icons.png);
+    background-position: -182px -92px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument1:hover {
+    background-color: rgb(75, 75, 75);
+}
+.instrument2 {
+    background-image: url(../src/assets/icons.png);
+    background-position: 0px -136px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument2:hover {
+    background-color: rgb(75, 75, 75);
+}
+.instrument3 {
+    background-image: url(../src/assets/icons.png);
+    background-position: -227px -88px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument3:hover {
+    background-color: rgb(75, 75, 75);
+}
+.instrument4 {
+    background-image: url(../src/assets/icons.png);
+    background-position: -225px -138px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument4:hover {
+    background-color: rgb(75, 75, 75);
+}
+.instrument5 {
+    background-image: url(../src/assets/icons.png);
+    background-position: -46px -228px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument5:hover {
+    background-color: rgb(75, 75, 75);
+}
+.instrument6 {
+    background-image: url(../src/assets/icons.png);
+    background-position: -46px -136px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument6:hover {
+    background-color: rgb(75, 75, 75);
+}
+.instrument7 {
+    background-image: url(../src/assets/icons.png);
+    background-position: -182px 0px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument7:hover {
+    background-color: rgb(75, 75, 75);
+}
+.instrument8 {
+    background-image: url(../src/assets/icons.png);
+    background-position: -228px -46px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument8:hover {
+    background-color: rgb(75, 75, 75);
+}
+.instrument9 {
+    background-image: url(../src/assets/icons.png);
+    background-position: -184px -228px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument9:hover {
+    background-color: rgb(75, 75, 75);
+}
+.instrument10 {
+    background-image: url(../src/assets/icons.png);
+    background-position: -92px -136px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument10:hover {
+    background-color: rgb(75, 75, 75);
+}
+.instrument11 {
+    background-image: url(../src/assets/icons.png);
+    background-position: -182px -46px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument11:hover {
+    background-color: rgb(75, 75, 75);
+}
+.instrument12 {
+    background-image: url(../src/assets/icons.png);
+    background-position: -92px -228px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument12:hover {
+    background-color: rgb(75, 75, 75);
+}
+.instrument13 {
+    background-image: url(../src/assets/icons.png);
+    background-position: -138px -228px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument13:hover {
+    background-color: rgb(75, 75, 75);
+}
+.instrument14 {
+    background-image: url(../src/assets/icons.png);
+    background-position: 0px -228px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument14:hover {
+    background-color: rgb(75, 75, 75);
+}
+.instrument15 {
+    background-image: url(../src/assets/icons.png);
+    background-position: -274px 0px;
+    background-color: rgb(47, 47, 47);
+}
+.instrument15:hover {
+    background-color: rgb(75, 75, 75);
+}
+.colors {
+    margin: 20px auto;
+    position: relative;
+    width: 70px;
+    height: 70px;
+}
+#currentColor, #previousColor {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgb(95, 95, 95);
+    background-color: rgb(53, 53, 53);
+    cursor: pointer;
+}
+#currentColor:hover, #previousColor:hover {
+    border: 3px solid rgb(173, 173, 173);
+}
+#previousColor {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+#currentColor {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.swapColor {
+    width: 20px;
+    height: 20px;
+    background-image: url(../src/assets/icons.png);
+    background-position: -274px -222px;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+.frameList {
+    margin: 0 5px;   
+}
+.frame {
+    position: relative;
+    border-radius: 2px;
+    background: url(../src/assets/frameBackground.png) repeat;
+    cursor: pointer;
+}
+.framesFunctions {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+.copy {
+    top: 83px;
+    left: 83px;
+    background-image: url(../src/assets/icons.png);
+    background-position: -274px -76px;
+}
+.delete{
+    top: 0px;
+    left: 83px;
+    background-image: url(../src/assets/icons.png);
+    background-position: -274px -106px;
+}
+.move{
+    top: 83px;
+    left: 0px;
+    background-image: url(../src/assets/icons.png);
+    background-position: -274px -46px;
+}
+.number{
+    top: 0px;
+    left: 0px;
+    line-height: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.addFrame {
+    width: 96px;
+    height: 50px;
+    margin: 8px auto 0px auto;
+    border: #888 solid 3px;
+    border-radius: 4px;
+    color: #888;
+    background-color: #222;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 22px;
+}
+.addFrame:hover {
+    border: 3px solid gold;
+}
+
+
+
+
+
+.center {
+    background-color: #222;
+    margin: auto 5px;
+}
+
+.previewContainer {
+    margin: 0px 5px;
+    width: 226px;
+    height: 250px;
+    background-color: rgb(47, 47, 47); 
+}
+.fpsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.fpsText {
+    font-family: Arial;
+    font-size: 15px;
+}
+.fpsRange {
+    cursor: pointer;
+}
+
+
+
+.settings {
+    width: 50px;
+    margin: auto 5px;
+}
+.settingsIcons {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(47, 47, 47);
+    border: 1px solid rgba(255, 255, 255, 0.096);
+}
+.settingsIcons:hover {
+    background-color: rgb(47, 47, 47);
+    background-color: rgb(75, 75, 75);
+}
+.preferences {
+    background-image: url(../src/assets/icons.png);
+    background-position: -46px -182px;
+}
+.resize {
+    background-image: url(../src/assets/icons.png); 
+    background-position: -138px -182px;
+}
+.save {
+    background-image: url(../src/assets/icons.png);
+    background-position: -228px 0px;
+}
+.export {
+    background-image: url(../src/assets/icons.png);
+    background-position: 0px -182px;
+}
+.import {
+    background-image: url(../src/assets/icons.png);
+    background-position: -92px -182px;
+}
+
+

@@ -40,14 +40,9 @@
           <div class="instruments instrument15"></div>
       </div>
       <div class="colors">
-          <div class="menu currentColor">
-            <div id="currentColor"></div>
-            <div class="menuText">Current color</div>
-          </div>
-          <div class="menu colors previousColor">
-            <div id="previousColor"></div>
-            <div class="menuText">Previous color</div>
-          </div>
+        <div id="previousColor"></div>
+        <div id="currentColor"></div>
+        <div class="swapColor"></div>
       </div>
     </div>
     
@@ -57,12 +52,14 @@
           <div class="frame frame_0" id="frame_0">
             <canvas class="canvas canvas_0" id="canvas_0" width="112" height="112">
             </canvas>
-            <div class="framesFunctions copy">copy</div>
-            <div class="framesFunctions delete">delete</div>
-            <div class="framesFunctions move">move</div>
-            <div class="framesFunctions number">number</div>
+            <div class="framesFunctions copy"></div>
+            <div class="framesFunctions delete"></div>
+            <div class="framesFunctions move"></div>
+            <div class="framesFunctions number">1</div>
           </div>
-          <div class="plus" id="plus">+</div>
+          <div class="addFrame" id="addFrame">
+              Add new frame
+          </div>
         </div>
       </div>
     </div>
@@ -73,23 +70,22 @@
     </div>
 
     <div class="previewContainer" id="previewContainer">
-      <div class="fullscreen" id="fullscreen">
-        Fullscreen
-      </div>
       <canvas id="preview" width="224" height="224">
       </canvas>
-      <div class="previewOptions" id="previewOptions">
-        <div class="on" id="on">
-          ON
-        </div>
-        <div class="off" id="off">
-          OFF
-        </div>
+      <div class="fpsContainer" id="fpsContainer">
+        <div class="fpsText">FPS</div>
+        <input type="range" class="fpsRange" min="1" max="24" step="1">
       </div> 
-      <input type="range" id="FPS" min="1" max="32" step="1">
-      
+
     </div>
 
+    <div class="settings">
+        <div class="settingsIcons preferences"></div>
+        <div class="settingsIcons resize"></div>
+        <div class="settingsIcons save"></div>
+        <div class="settingsIcons export"></div>
+        <div class="settingsIcons import"></div>
+    </div>
 
   </main>
 
