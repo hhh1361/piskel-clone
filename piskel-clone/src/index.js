@@ -1,3 +1,9 @@
-import createMainCanvas from './components/createMainCanvas';
+import canvasFunctions from './components/canvasFunctions';
+import { instrumentsFunction, penSizeFunction } from './components/instrumentsFunctions';
+import testFunc from './components/test';
 
-createMainCanvas();
+
+canvasFunctions();
+instrumentsFunction();
+penSizeFunction();
+testFunc();

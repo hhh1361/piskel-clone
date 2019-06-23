@@ -22,7 +22,14 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.html$/,
+        exclude: /node_modules/,
+        use: { loader: 'html-loader' },
+      },
     ],
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin({
+    template: './src/index.html',
+  })],
 };
