@@ -217,7 +217,7 @@ main {
 #instrument15:hover {
     background-color: rgb(75, 75, 75);
 }
-.colors {
+.colorsBox {
     margin: 20px auto;
     position: relative;
     width: 70px;
@@ -253,7 +253,45 @@ main {
     left: 0px;
     cursor: pointer;
 }
-
+.pallete {
+  width: 328px;
+  display: none;
+  flex-direction: row;
+  z-index: 999999;
+  margin-left: 48px;
+}
+.colors {
+  width: 30px;
+  height: 46px;
+  border: 1px solid white;
+}
+.color1 {
+  background-color: white;
+}
+.color2 {
+  background-color: red;
+}
+.color3 {
+  background-color: orange;
+}
+.color4 {
+  background-color: yellow;
+}
+.color5 {
+  background-color: green;
+}
+.color6 {
+  background-color: rgb(0, 217, 255);
+}
+.color7 {
+  background-color: blue;
+}
+.color8 {
+  background-color: rgb(255, 0, 255);
+}
+.color9 {
+  background-color: black;
+}
 .center {
   width: 640px;
   height: 640px;
