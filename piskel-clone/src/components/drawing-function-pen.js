@@ -45,10 +45,10 @@ const drawingFunctionPen = function drawingFunctionPen() {
         Math.floor(mouse.x / 5) * 5, Math.floor(mouse.y / 5) * 5, instrument.penSize * 5, instrument.penSize * 5,
       );
     }
+    if (instrument.state === 'pen') {
+      document.onmouseup = () => {
+        draw = false;
 
-    document.onmouseup = () => {
-      draw = false;
-      if (instrument.state === 'pen') {
         for (let y = 0; y < canvas.array.length; y++) {
           for (let x = 0; x < canvas.array.length; x++) {
             if (canvas.array[y][x] !== undefined) {
@@ -64,9 +64,10 @@ const drawingFunctionPen = function drawingFunctionPen() {
             }
           }
         }
-      }
-      document.onmouseup = null;
-    };
+
+        document.onmouseup = null;
+      };
+    }
   });
 };
 
