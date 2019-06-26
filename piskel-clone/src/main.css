@@ -232,16 +232,19 @@ main {
 }
 #currentColor:hover, #previousColor:hover {
     border: 3px solid rgb(173, 173, 173);
+    box-shadow: inset 0px 0px 10px rgba(119, 119, 119, 0.9);
 }
 #previousColor {
     position: absolute;
     top: 20px;
     left: 20px;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
 }
 #currentColor {
     position: absolute;
     top: 0px;
     left: 0px;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
 }
 .swapColor {
     width: 20px;
@@ -329,7 +332,7 @@ main {
 
 .mainCanvas {
   box-shadow: 0px 0px 10px 0px rgb(209, 208, 162);
-  margin:10px;
+  opacity: 0;
 }
 
 
