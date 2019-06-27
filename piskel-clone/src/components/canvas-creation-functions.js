@@ -17,9 +17,13 @@ const canvasFunctions = function canvasFunctions() {
     // creating 32x32/64x64/128x128 Array
     function arrayCreator(n) {
       array = new Array(n);
-      for (let j = 0; j < array.length; j++) {
-        array[j] = new Array(n);
+      for (let i = 0; i < n; i++) {
+        array[i] = new Array(n);
+        for (let j = 0; j < n; j++) {
+          array[i][j] = { color: '?' };
+        }
       }
+      console.log(array);
     }
 
     // creating 32x32/64x64/128x128 Canvas

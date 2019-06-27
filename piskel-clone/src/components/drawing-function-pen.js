@@ -21,7 +21,7 @@ const drawingFunctionPen = function drawingFunctionPen() {
       context.fillStyle = instrument.currentColor;
       for (let i = 0; i < instrument.penSize; i++) {
         for (let j = 0; j < instrument.penSize; j++) {
-          canvas.array[Math.floor(mouse.x / 5) + i][Math.floor(mouse.y / 5) + j] = { color: instrument.currentColor };
+          canvas.array[Math.floor(mouse.y / 5) + i][Math.floor(mouse.x / 5) + j] = { color: instrument.currentColor };
         }
       }
       global.console.log(canvas.array);
@@ -38,7 +38,14 @@ const drawingFunctionPen = function drawingFunctionPen() {
       mouse.x = e.pageX - mainCanvas.offsetLeft;
       mouse.y = e.pageY - mainCanvas.offsetTop;
 
-      canvas.array[Math.floor(mouse.x / 5)][Math.floor(mouse.y / 5)] = { color: 'temp' };
+
+      for (let i = 0; i < instrument.penSize; i++) {
+        for (let j = 0; j < instrument.penSize; j++) {
+          if (Math.floor(mouse.x / 5) + j < canvas.array.length && Math.floor(mouse.y / 5) + i < canvas.array.length) {
+            canvas.array[Math.floor(mouse.y / 5) + i][Math.floor(mouse.x / 5) + j] = { color: instrument.currentColor };
+          }
+        }
+      }
 
 
       context.fillRect(
@@ -48,23 +55,6 @@ const drawingFunctionPen = function drawingFunctionPen() {
     if (instrument.state === 'pen') {
       document.onmouseup = () => {
         draw = false;
-
-        for (let y = 0; y < canvas.array.length; y++) {
-          for (let x = 0; x < canvas.array.length; x++) {
-            if (canvas.array[y][x] !== undefined) {
-              if (canvas.array[y][x].color === 'temp') {
-                for (let i = 0; i < instrument.penSize; i++) {
-                  for (let j = 0; j < instrument.penSize; j++) {
-                    if (y + i < canvas.array.length && x + i < canvas.array.length) {
-                      canvas.array[y + i][x + j] = { color: instrument.currentColor };
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-
         document.onmouseup = null;
       };
     }
