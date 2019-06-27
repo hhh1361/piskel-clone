@@ -96,6 +96,7 @@
         <div class="canvasSize">64</div>
         <div class="canvasSize">128</div>
       </div>
+      <canvas class="mainCanvas" id="mainCanvas"></canvas>
     </div>
 
     <div class="previewContainer" id="previewContainer">
@@ -105,12 +106,17 @@
         <div class="fpsText">FPS</div>
         <input type="range" class="fpsRange" min="1" max="24" step="1">
       </div>
+      <div class="space"></div>
+      <div class="canvasInformation">
+        <div class="canvasSizeInformation" id="canvasSizeInformation"></div>
+        <div class="cursorCoordinatesInformation" id="cursorCoordinatesInformation"></div>
+      </div>
 
     </div>
 
     <div class="settings">
         <div class="settingsIcons preferences"></div>
-        <div class="settingsIcons resize"></div>
+        <div class="settingsIcons fullscreen" id="fullscreen"></div>
         <div class="settingsIcons save"></div>
         <div class="settingsIcons export"></div>
         <div class="settingsIcons import"></div>

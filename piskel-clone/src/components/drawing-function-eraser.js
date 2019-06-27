@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 import { instrument } from './instruments-functions';
-import { canvas } from './canvas-functions';
+import { canvas } from './canvas-creation-functions';
 
 const drawingFunctionEraser = function drawingFunctionEraser() {
   const mouse = { x: 0, y: 0 };

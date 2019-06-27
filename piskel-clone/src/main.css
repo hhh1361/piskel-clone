@@ -409,8 +409,7 @@ main {
 .previewContainer {
     margin: 0px 5px;
     width: 226px;
-    height: 250px;
-    background-color: rgb(47, 47, 47);
+    height: 640px;
 }
 .fpsContainer {
     display: flex;
@@ -425,8 +424,23 @@ main {
 .fpsRange {
     cursor: pointer;
 }
-
-
+.space {
+  box-sizing: border-box;
+  height: 350px;
+}
+.canvasInformation {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  color: gold;
+  font-size: 12px;
+  line-height: 30px;
+  font-weight: 800;
+  font-family: 'Titillium Web', sans-serif;
+}
+.cursorCoordinatesInformation{
+  margin-left: 10px;
+}
 
 .settings {
     width: 50px;
