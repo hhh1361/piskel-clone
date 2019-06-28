@@ -115,7 +115,6 @@ main {
 }
 #instrument3 {
     background-image: url(../src/assets/icons.png);
-    background-position: -46px -228px;
     background-position: 0px -136px;
     background-color: rgb(47, 47, 47);
 }
@@ -124,7 +123,8 @@ main {
 }
 #instrument4 {
     background-image: url(../src/assets/icons.png);
-    background-position: -225px -138px;
+    background-position: 0px -136px;
+    transform: rotate(270deg);
     background-color: rgb(47, 47, 47);
 }
 #instrument4:hover {
