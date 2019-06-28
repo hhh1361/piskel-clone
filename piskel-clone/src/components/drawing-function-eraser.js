@@ -1,5 +1,4 @@
 /* eslint-disable no-plusplus */
-/* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 import { instrument } from './instruments-functions';
 import { canvas } from './canvas-creation-functions';
@@ -18,6 +17,7 @@ const drawingFunctionEraser = function drawingFunctionEraser() {
     if (instrument.state === 'eraser' && instrument.currentColor !== '?') {
       draw = true;
       global.console.log(mouse.x, mouse.y);
+
       for (let i = 0; i < instrument.penSize; i++) {
         for (let j = 0; j < instrument.penSize; j++) {
           canvas.array[Math.floor(mouse.x / 5) + i][Math.floor(mouse.y / 5) + j].color = '?';

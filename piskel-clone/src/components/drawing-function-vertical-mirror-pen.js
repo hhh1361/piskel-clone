@@ -3,7 +3,7 @@
 import { instrument } from './instruments-functions';
 import { canvas } from './canvas-creation-functions';
 
-const drawingFunctionPen = function drawingFunctionPen() {
+const drawingFunctionVerticalMirrorPen = function drawingFunctionVerticalMirrorPen() {
   const mouse = { x: 0, y: 0 };
   let draw = false;
   const mainCanvas = document.getElementById('mainCanvas');
@@ -14,7 +14,7 @@ const drawingFunctionPen = function drawingFunctionPen() {
   mainCanvas.addEventListener('mousedown', (e) => {
     mouse.x = e.pageX - mainCanvas.offsetLeft;
     mouse.y = e.pageY - mainCanvas.offsetTop;
-    if (instrument.state === 'pen' && instrument.currentColor !== '?') {
+    if (instrument.state === 'verticalMirrorPen' && instrument.currentColor !== '?') {
       draw = true;
       global.console.log(mouse.x, mouse.y);
       context.fillStyle = instrument.currentColor;
@@ -24,26 +24,10 @@ const drawingFunctionPen = function drawingFunctionPen() {
           canvas.array[Math.floor(mouse.y / 5) + i][Math.floor(mouse.x / 5) + j] = { color: instrument.currentColor };
         }
       }
-      global.console.log(canvas.array);
-
-      context.fillRect(
-        Math.floor(mouse.x / 5) * 5, Math.floor(mouse.y / 5) * 5, instrument.penSize * 5, instrument.penSize * 5,
-      );
-    }
-  });
-
-  // mousemove event - continue drawing
-  mainCanvas.addEventListener('mousemove', (e) => {
-    if (draw === true && instrument.state === 'pen') {
-      mouse.x = e.pageX - mainCanvas.offsetLeft;
-      mouse.y = e.pageY - mainCanvas.offsetTop;
-
 
       for (let i = 0; i < instrument.penSize; i++) {
         for (let j = 0; j < instrument.penSize; j++) {
-          if (Math.floor(mouse.x / 5) + j < canvas.array.length && Math.floor(mouse.y / 5) + i < canvas.array.length) {
-            canvas.array[Math.floor(mouse.y / 5) + i][Math.floor(mouse.x / 5) + j] = { color: instrument.currentColor };
-          }
+          canvas.array[Math.floor(mouse.y / 5) + i][Math.ceil((canvas.array.length * 5 - mouse.x) / 5) - 1 - j] = { color: instrument.currentColor };
         }
       }
 
@@ -51,8 +35,41 @@ const drawingFunctionPen = function drawingFunctionPen() {
       context.fillRect(
         Math.floor(mouse.x / 5) * 5, Math.floor(mouse.y / 5) * 5, instrument.penSize * 5, instrument.penSize * 5,
       );
+
+      context.fillRect(
+        (canvas.array.length - Math.floor(mouse.x / 5)) * 5 - instrument.penSize * 5, Math.floor(mouse.y / 5) * 5, instrument.penSize * 5, instrument.penSize * 5,
+      );
     }
-    if (instrument.state === 'pen') {
+  });
+
+  // mousemove event - continue drawing
+  mainCanvas.addEventListener('mousemove', (e) => {
+    if (draw === true && instrument.state === 'verticalMirrorPen') {
+      mouse.x = e.pageX - mainCanvas.offsetLeft;
+      mouse.y = e.pageY - mainCanvas.offsetTop;
+
+      for (let i = 0; i < instrument.penSize; i++) {
+        for (let j = 0; j < instrument.penSize; j++) {
+          canvas.array[Math.floor(mouse.y / 5) + i][Math.floor(mouse.x / 5) + j] = { color: instrument.currentColor };
+        }
+      }
+
+      for (let i = 0; i < instrument.penSize; i++) {
+        for (let j = 0; j < instrument.penSize; j++) {
+          canvas.array[Math.floor(mouse.y / 5) + i][Math.ceil((canvas.array.length * 5 - mouse.x) / 5) - 1 - j] = { color: instrument.currentColor };
+        }
+      }
+
+
+      context.fillRect(
+        Math.floor(mouse.x / 5) * 5, Math.floor(mouse.y / 5) * 5, instrument.penSize * 5, instrument.penSize * 5,
+      );
+
+      context.fillRect(
+        (canvas.array.length - Math.floor(mouse.x / 5)) * 5 - instrument.penSize * 5, Math.floor(mouse.y / 5) * 5, instrument.penSize * 5, instrument.penSize * 5,
+      );
+    }
+    if (instrument.state === 'verticalMirrorPen') {
       document.onmouseup = () => {
         draw = false;
         document.onmouseup = null;
@@ -61,4 +78,4 @@ const drawingFunctionPen = function drawingFunctionPen() {
   });
 };
 
-export default drawingFunctionPen;
+export default drawingFunctionVerticalMirrorPen;

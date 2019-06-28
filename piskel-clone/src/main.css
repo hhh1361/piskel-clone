@@ -107,7 +107,7 @@ main {
 }
 #instrument2 {
     background-image: url(../src/assets/icons.png);
-    background-position: 0px -136px;
+    background-position: -46px -228px;
     background-color: rgb(47, 47, 47);
 }
 #instrument2:hover {
@@ -115,7 +115,8 @@ main {
 }
 #instrument3 {
     background-image: url(../src/assets/icons.png);
-    background-position: -227px -88px;
+    background-position: -46px -228px;
+    background-position: 0px -136px;
     background-color: rgb(47, 47, 47);
 }
 #instrument3:hover {
@@ -131,7 +132,7 @@ main {
 }
 #instrument5 {
     background-image: url(../src/assets/icons.png);
-    background-position: -46px -228px;
+    background-position: -227px -88px;
     background-color: rgb(47, 47, 47);
 }
 #instrument5:hover {
@@ -139,7 +140,7 @@ main {
 }
 #instrument6 {
     background-image: url(../src/assets/icons.png);
-    background-position: -46px -136px;
+    background-position: -225px -138px;
     background-color: rgb(47, 47, 47);
 }
 #instrument6:hover {
@@ -147,7 +148,7 @@ main {
 }
 #instrument7 {
     background-image: url(../src/assets/icons.png);
-    background-position: -182px 0px;
+    background-position: -184px -228px;
     background-color: rgb(47, 47, 47);
 }
 #instrument7:hover {
@@ -155,7 +156,7 @@ main {
 }
 #instrument8 {
     background-image: url(../src/assets/icons.png);
-    background-position: -228px -46px;
+    background-position: -46px -136px;
     background-color: rgb(47, 47, 47);
 }
 #instrument8:hover {
@@ -163,7 +164,7 @@ main {
 }
 #instrument9 {
     background-image: url(../src/assets/icons.png);
-    background-position: -184px -228px;
+    background-position: -182px 0px;
     background-color: rgb(47, 47, 47);
 }
 #instrument9:hover {
@@ -171,7 +172,7 @@ main {
 }
 #instrument10 {
     background-image: url(../src/assets/icons.png);
-    background-position: -92px -136px;
+    background-position: -228px -46px;
     background-color: rgb(47, 47, 47);
 }
 #instrument10:hover {

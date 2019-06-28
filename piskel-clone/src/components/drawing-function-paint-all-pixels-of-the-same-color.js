@@ -14,7 +14,6 @@ const drawingFunctionPixels = function drawingFunctionPixels() {
     mouse.y = e.pageY - mainCanvas.offsetTop;
     if (instrument.state === 'paintAllPixels' && instrument.currentColor !== '?') {
       const colorToBeChanged = canvas.array[Math.floor(mouse.y / 5)][Math.floor(mouse.x / 5)].color;
-      console.log(canvas.array);
       for (let i = 0; i < canvas.array.length; i++) {
         for (let j = 0; j < canvas.array.length; j++) {
           if (canvas.array[i][j].color === colorToBeChanged) {
@@ -26,7 +25,6 @@ const drawingFunctionPixels = function drawingFunctionPixels() {
           }
         }
       }
-      console.log(canvas.array);
     }
   });
 };

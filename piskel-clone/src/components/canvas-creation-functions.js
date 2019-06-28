@@ -23,7 +23,7 @@ const canvasFunctions = function canvasFunctions() {
           array[i][j] = { color: '?' };
         }
       }
-      console.log(array);
+      global.console.log(array);
     }
 
     // creating 32x32/64x64/128x128 Canvas
