@@ -8,6 +8,7 @@ import drawingFunctionVerticalMirrorPen from './components/drawing-function-vert
 import drawingFunctionHorizontalMirrorPen from './components/drawing-function-horizontal-mirror-pen';
 import drawingFunctionEraser from './components/drawing-function-eraser';
 import drawingFunctionPixels from './components/drawing-function-paint-all-pixels-of-the-same-color';
+import drawingFunctionColorPicker from './components/drawing-color-picker-function';
 
 
 canvasFunctions();
@@ -21,3 +22,4 @@ drawingFunctionVerticalMirrorPen();
 drawingFunctionHorizontalMirrorPen();
 drawingFunctionEraser();
 drawingFunctionPixels();
+drawingFunctionColorPicker();
