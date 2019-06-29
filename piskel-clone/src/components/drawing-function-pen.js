@@ -1,7 +1,10 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-plusplus */
 /* eslint-disable max-len */
 import { instrument } from './instruments-functions';
 import { canvas } from './canvas-creation-functions';
+import paintOver from './support-functions';
+
 
 const drawingFunctionPen = function drawingFunctionPen() {
   const mouse = { x: 0, y: 0 };
@@ -19,11 +22,8 @@ const drawingFunctionPen = function drawingFunctionPen() {
       global.console.log(mouse.x, mouse.y);
       context.fillStyle = instrument.currentColor;
 
-      for (let i = 0; i < instrument.penSize; i++) {
-        for (let j = 0; j < instrument.penSize; j++) {
-          canvas.array[Math.floor(mouse.y / 5) + i][Math.floor(mouse.x / 5) + j] = { color: instrument.currentColor };
-        }
-      }
+      paintOver(canvas.array, Math.floor(mouse.y / 5), Math.floor(mouse.x / 5));
+
       global.console.log(canvas.array);
 
       context.fillRect(
