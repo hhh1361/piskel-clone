@@ -10,6 +10,7 @@ import drawingFunctionEraser from './components/drawing-function-eraser';
 import drawingFunctionPixels from './components/drawing-function-paint-all-pixels-of-the-same-color';
 import drawingFunctionColorPicker from './components/drawing-function-color-picker';
 import drawingFunctionStroke from './components/drawing-function-stroke';
+import drawingFunctionRectangle from './components/drawing-function-rectangle';
 
 canvasFunctions();
 instrumentsFunction();
@@ -24,3 +25,4 @@ drawingFunctionEraser();
 drawingFunctionPixels();
 drawingFunctionColorPicker();
 drawingFunctionStroke();
+drawingFunctionRectangle();
