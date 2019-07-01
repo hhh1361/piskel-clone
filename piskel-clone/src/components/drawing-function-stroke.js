@@ -4,7 +4,7 @@
 /* eslint-disable max-len */
 import { instrument } from './instruments-functions';
 import { canvas } from './canvas-creation-functions';
-import paintOver from './support-functions';
+import { paintOver } from './support-functions';
 
 
 const drawingFunctionStroke = function drawingFunctionStroke() {
@@ -63,7 +63,7 @@ const drawingFunctionStroke = function drawingFunctionStroke() {
           if (stroke.distanceX > 0) { // X > Y; Y > 0; X > 0
             for (let i = 0; i < stroke.distanceY; i++) {
               for (let j = 0; j < stroke.array[i]; j++) {
-                paintOver(canvas.array, stroke.start.y + i, stroke.start.x + n);
+                paintOver(canvas.array, stroke.start.y + i, stroke.start.x + n, instrument.currentColor);
                 canvas.array[stroke.start.y + i][stroke.start.x + n].color = instrument.currentColor;
                 n++;
               }
@@ -71,7 +71,7 @@ const drawingFunctionStroke = function drawingFunctionStroke() {
           } else { // X > Y; Y > 0; X =< 0
             for (let i = 0; i < stroke.distanceY; i++) {
               for (let j = 0; j < stroke.array[i]; j++) {
-                paintOver(canvas.array, stroke.start.y + i, stroke.start.x + n);
+                paintOver(canvas.array, stroke.start.y + i, stroke.start.x + n, instrument.currentColor);
                 canvas.array[stroke.start.y + i][stroke.start.x + n].color = instrument.currentColor;
                 n--;
               }
@@ -82,7 +82,7 @@ const drawingFunctionStroke = function drawingFunctionStroke() {
           if (stroke.distanceX > 0) { // X > Y; Y < 0; X > 0
             for (let i = 0; i < Math.abs(stroke.distanceY); i++) {
               for (let j = 0; j < stroke.array[i]; j++) {
-                paintOver(canvas.array, stroke.start.y - i, stroke.start.x + n);
+                paintOver(canvas.array, stroke.start.y - i, stroke.start.x + n, instrument.currentColor);
                 canvas.array[stroke.start.y - i][stroke.start.x + n].color = instrument.currentColor;
                 n++;
               }
@@ -90,7 +90,7 @@ const drawingFunctionStroke = function drawingFunctionStroke() {
           } else { // X > Y; Y < 0; X =< 0
             for (let i = 0; i < Math.abs(stroke.distanceY); i++) {
               for (let j = 0; j < stroke.array[i]; j++) {
-                paintOver(canvas.array, stroke.start.y - i, stroke.start.x + n);
+                paintOver(canvas.array, stroke.start.y - i, stroke.start.x + n, instrument.currentColor);
                 canvas.array[stroke.start.y - i][stroke.start.x + n].color = instrument.currentColor;
                 n--;
               }
@@ -105,7 +105,7 @@ const drawingFunctionStroke = function drawingFunctionStroke() {
           if (stroke.distanceX > 0) { // X =< Y; Y > 0; X > 0
             for (let i = 0; i < stroke.distanceY; i++) {
               for (let j = 0; j < stroke.array[i]; j++) {
-                paintOver(canvas.array, stroke.start.y + n, stroke.start.x + i);
+                paintOver(canvas.array, stroke.start.y + n, stroke.start.x + i, instrument.currentColor);
                 canvas.array[stroke.start.y + n][stroke.start.x + i].color = instrument.currentColor;
                 n++;
               }
@@ -113,7 +113,7 @@ const drawingFunctionStroke = function drawingFunctionStroke() {
           } else { // X =< Y; Y > 0; X =< 0
             for (let i = 0; i < stroke.distanceY; i++) {
               for (let j = 0; j < stroke.array[i]; j++) {
-                paintOver(canvas.array, stroke.start.y + n, stroke.start.x - i);
+                paintOver(canvas.array, stroke.start.y + n, stroke.start.x - i, instrument.currentColor);
                 canvas.array[stroke.start.y + n][stroke.start.x - i].color = instrument.currentColor;
                 n++;
               }
@@ -124,7 +124,7 @@ const drawingFunctionStroke = function drawingFunctionStroke() {
           if (stroke.distanceX > 0) { // X =< Y; Y =< 0; X > 0
             for (let i = 0; i < Math.abs(stroke.distanceY); i++) {
               for (let j = 0; j < stroke.array[i]; j++) {
-                paintOver(canvas.array, stroke.start.y + n, stroke.start.x + i);
+                paintOver(canvas.array, stroke.start.y + n, stroke.start.x + i, instrument.currentColor);
                 canvas.array[stroke.start.y + n][stroke.start.x + i].color = instrument.currentColor;
                 n--;
               }
@@ -132,7 +132,7 @@ const drawingFunctionStroke = function drawingFunctionStroke() {
           } else { // X =< Y; Y =< 0; X =< 0
             for (let i = 0; i < Math.abs(stroke.distanceY); i++) {
               for (let j = 0; j < stroke.array[i]; j++) {
-                paintOver(canvas.array, stroke.start.y + n, stroke.start.x - i);
+                paintOver(canvas.array, stroke.start.y + n, stroke.start.x - i, instrument.currentColor);
                 canvas.array[stroke.start.y + n][stroke.start.x - i].color = instrument.currentColor;
                 n--;
               }

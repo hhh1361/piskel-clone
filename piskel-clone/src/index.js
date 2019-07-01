@@ -11,6 +11,8 @@ import drawingFunctionPixels from './components/drawing-function-paint-all-pixel
 import drawingFunctionColorPicker from './components/drawing-function-color-picker';
 import drawingFunctionStroke from './components/drawing-function-stroke';
 import drawingFunctionRectangle from './components/drawing-function-rectangle';
+import drawingFunctionLighten from './components/drawing-function-lighten';
+import frameManagement from './components/frame-management-functions';
 
 canvasFunctions();
 instrumentsFunction();
@@ -26,3 +28,5 @@ drawingFunctionPixels();
 drawingFunctionColorPicker();
 drawingFunctionStroke();
 drawingFunctionRectangle();
+drawingFunctionLighten();
+frameManagement();

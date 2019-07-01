@@ -3,7 +3,7 @@
 /* eslint-disable max-len */
 import { instrument } from './instruments-functions';
 import { canvas } from './canvas-creation-functions';
-import paintOver from './support-functions';
+import { paintOver } from './support-functions';
 
 
 const drawingFunctionPen = function drawingFunctionPen() {
@@ -22,7 +22,7 @@ const drawingFunctionPen = function drawingFunctionPen() {
       global.console.log(mouse.x, mouse.y);
       context.fillStyle = instrument.currentColor;
 
-      paintOver(canvas.array, Math.floor(mouse.y / 5), Math.floor(mouse.x / 5));
+      paintOver(canvas.array, Math.floor(mouse.y / 5), Math.floor(mouse.x / 5), instrument.currentColor);
 
       global.console.log(canvas.array);
 

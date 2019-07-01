@@ -4,8 +4,7 @@
 /* eslint-disable max-len */
 import { instrument } from './instruments-functions';
 import { canvas } from './canvas-creation-functions';
-import paintOver from './support-functions';
-// import paintOver from './support-functions';
+import { paintOver } from './support-functions';
 
 
 const drawingFunctionRectangle = function drawingFunctionRectangle() {
@@ -51,18 +50,17 @@ const drawingFunctionRectangle = function drawingFunctionRectangle() {
 
       // draw rectangle: vertical lines
       for (let i = 0; i <= rectangle.distanceY; i++) {
-        paintOver(canvas.array, rectangle.vertex.y + i, rectangle.vertex.x);
-        paintOver(canvas.array, rectangle.vertex.y + i, rectangle.vertex.x + rectangle.distanceX);
+        paintOver(canvas.array, rectangle.vertex.y + i, rectangle.vertex.x, instrument.currentColor);
+        paintOver(canvas.array, rectangle.vertex.y + i, rectangle.vertex.x + rectangle.distanceX, instrument.currentColor);
       }
 
       // draw rectangle: horizontal lines
       for (let i = 0; i <= rectangle.distanceX; i++) {
-        paintOver(canvas.array, rectangle.vertex.y, rectangle.vertex.x + i);
-        paintOver(canvas.array, rectangle.vertex.y + rectangle.distanceY, rectangle.vertex.x + i);
+        paintOver(canvas.array, rectangle.vertex.y, rectangle.vertex.x + i, instrument.currentColor);
+        paintOver(canvas.array, rectangle.vertex.y + rectangle.distanceY, rectangle.vertex.x + i, instrument.currentColor);
       }
 
 
-      console.log(rectangle);
       // refresh main canvas
       canvas.canvas = mainCanvas;
       const context = mainCanvas.getContext('2d');

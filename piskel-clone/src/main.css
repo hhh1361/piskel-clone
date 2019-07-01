@@ -197,10 +197,10 @@ main {
 #instrument13 {
     background-image: url(../src/assets/icons.png);
     background-position: -138px -228px;
-    background-color: rgb(134, 1, 1);
+    background-color: rgb(47, 47, 47);
 }
 #instrument13:hover {
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(204, 122, 122);
 }
 #instrument14 {
     background-image: url(../src/assets/icons.png);
@@ -213,7 +213,7 @@ main {
 #instrument15 {
     background-image: url(../src/assets/icons.png);
     background-position: -274px 0px;
-    background-color: rgb(134, 1, 1);
+    background-color: rgb(47, 47, 47);
 }
 #instrument15:hover {
     background-color: rgb(75, 75, 75);
@@ -349,6 +349,7 @@ main {
     border-radius: 2px;
     background: url(../src/assets/frameBackground.png) repeat;
     cursor: pointer;
+    height: 128px;
 }
 .framesFunctions {
     position: absolute;
@@ -356,19 +357,19 @@ main {
     height: 30px;
 }
 .copy {
-    top: 83px;
-    left: 83px;
+    top: 97px;
+    left: 97px;
     background-image: url(../src/assets/icons.png);
     background-position: -274px -76px;
 }
 .delete{
     top: 0px;
-    left: 83px;
+    left: 97px;
     background-image: url(../src/assets/icons.png);
     background-position: -274px -106px;
 }
 .move{
-    top: 83px;
+    top: 97px;
     left: 0px;
     background-image: url(../src/assets/icons.png);
     background-position: -274px -46px;
@@ -382,17 +383,17 @@ main {
 }
 
 .addFrame {
-    width: 96px;
+    width: 128px;
     height: 50px;
     margin: 8px auto 0px auto;
     border: #888 solid 3px;
     border-radius: 4px;
     color: #888;
     background-color: #222;
-    font-size: 15px;
+    font-size: 17px;
     cursor: pointer;
     text-align: center;
-    line-height: 22px;
+    line-height: 40px;
 }
 .addFrame:hover {
     border: 3px solid gold;
