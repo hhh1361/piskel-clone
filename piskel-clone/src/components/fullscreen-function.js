@@ -1,8 +1,8 @@
 const fullscreenFunction = function fullscreenFunction() {
   const fullscreen = document.getElementById('fullscreen');
-  const previewContainer = document.getElementById('previewContainer');
+  const preview = document.getElementById('preview');
   fullscreen.addEventListener('click', () => {
-    previewContainer.requestFullscreen();
+    preview.requestFullscreen();
   });
 };
 

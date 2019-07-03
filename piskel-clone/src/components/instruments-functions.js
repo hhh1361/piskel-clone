@@ -6,6 +6,7 @@ const instrument = {
   penSize: 1,
   currentColor: '?',
   previousColor: '?',
+  frames: { frame_0: '?' },
 };
 
 const instrumentsFunction = function instrumentsFunction() {

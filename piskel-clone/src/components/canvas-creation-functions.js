@@ -44,10 +44,32 @@ const canvasFunctions = function canvasFunctions() {
         arrayCreator(canvasSize);
         canvas.canvas = mainCanvas;
         canvas.array = array;
+        canvas.arrayClean = JSON.parse(JSON.stringify(array));
         const size = document.getElementById('canvasSizeInformation');
         size.innerHTML = ` [${canvas.array.length}x${canvas.array.length}]`;
       }
-      global.console.log(canvas);
+
+      const preview = document.getElementById('preview');
+      const ctx = preview.getContext('2d');
+      let i = 0;
+      let previewArray;
+
+      // eslint-disable-next-line no-unused-vars
+      const timerId = setInterval(() => {
+        const collection = document.getElementsByClassName('frame');
+        previewArray = Array.from(collection);
+
+        if (i < previewArray.length) {
+          ctx.clearRect(0, 0, 224, 224);
+          ctx.drawImage(previewArray[i].children[0], 0, 0);
+          i++;
+          if (i >= previewArray.length) {
+            i = 0;
+          }
+        } else {
+          i = 0;
+        }
+      }, 300);
     });
   }
   canvasCreation();

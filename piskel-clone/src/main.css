@@ -18,6 +18,7 @@ main {
 .leftSection {
     width: 100px;
     margin: auto 5px;
+    z-index: 9999;
 }
 .thickness {
     display: flex;
@@ -261,7 +262,7 @@ main {
   width: 328px;
   display: none;
   flex-direction: row;
-  z-index: 999999;
+  z-index: 9999;
   margin-left: 48px;
 }
 .colors {
@@ -350,6 +351,8 @@ main {
     background: url(../src/assets/frameBackground.png) repeat;
     cursor: pointer;
     height: 128px;
+    width: 128px;
+    margin: 3px;
 }
 .framesFunctions {
     position: absolute;
@@ -373,6 +376,7 @@ main {
     left: 0px;
     background-image: url(../src/assets/icons.png);
     background-position: -274px -46px;
+    display: none;
 }
 .number{
     top: 0px;
@@ -380,6 +384,7 @@ main {
     line-height: 30px;
     font-size: 30px;
     font-weight: bold;
+    display: none;
 }
 
 .addFrame {
@@ -399,6 +404,11 @@ main {
     border: 3px solid gold;
 }
 
+#current {
+
+  border: 1px solid gold;
+  border-radius: 3px;
+}
 
 
 
@@ -452,10 +462,13 @@ main {
     width: 50px;
     height: 50px;
     background-color: rgb(47, 47, 47);
+    background-color: rgb(134, 1, 1);
     border: 1px solid rgba(255, 255, 255, 0.096);
 }
+.fullscreen {
+  background-color: rgb(47, 47, 47);
+}
 .settingsIcons:hover {
-    background-color: rgb(47, 47, 47);
     background-color: rgb(75, 75, 75);
 }
 .preferences {
