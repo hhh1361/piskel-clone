@@ -13,6 +13,7 @@ import drawingFunctionStroke from './components/drawing-function-stroke';
 import drawingFunctionRectangle from './components/drawing-function-rectangle';
 import drawingFunctionLighten from './components/drawing-function-lighten';
 import frameManagement from './components/frame-management-functions';
+import keysFunction from './components/keys-functions';
 
 canvasFunctions();
 instrumentsFunction();
@@ -30,3 +31,4 @@ drawingFunctionStroke();
 drawingFunctionRectangle();
 drawingFunctionLighten();
 frameManagement();
+keysFunction();

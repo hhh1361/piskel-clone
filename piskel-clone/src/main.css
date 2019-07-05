@@ -98,125 +98,125 @@ main {
   cursor: pointer;
   font-size: 0pt;
 }
-#instrument1 {
+#pen {
     background-image: url(../src/assets/icons.png);
     background-position: -182px -92px;
     background-color: rgb(47, 47, 47);
 }
-#instrument1:hover {
+#pen:hover {
     background-color: rgb(75, 75, 75);
 }
-#instrument2 {
+#eraser {
     background-image: url(../src/assets/icons.png);
     background-position: -46px -228px;
     background-color: rgb(47, 47, 47);
 }
-#instrument2:hover {
+#eraser:hover {
     background-color: rgb(75, 75, 75);
 }
-#instrument3 {
+#verticalMirrorPen {
     background-image: url(../src/assets/icons.png);
     background-position: 0px -136px;
     background-color: rgb(47, 47, 47);
 }
-#instrument3:hover {
+#verticalMirrorPen:hover {
     background-color: rgb(75, 75, 75);
 }
-#instrument4 {
+#horizontalMirrorPen {
     background-image: url(../src/assets/icons.png);
     background-position: 0px -136px;
     transform: rotate(270deg);
     background-color: rgb(47, 47, 47);
 }
-#instrument4:hover {
+#horizontalMirrorPen:hover {
     background-color: rgb(75, 75, 75);
 }
-#instrument5 {
+#paintBucket {
     background-image: url(../src/assets/icons.png);
     background-position: -227px -88px;
     background-color: rgb(134, 1, 1);
 }
-#instrument5:hover {
+#paintBucket:hover {
     background-color: rgb(75, 75, 75);
 }
-#instrument6 {
+#paintAllPixels {
     background-image: url(../src/assets/icons.png);
     background-position: -225px -138px;
     background-color: rgb(47, 47, 47);
 }
-#instrument6:hover {
+#paintAllPixels:hover {
     background-color: rgb(75, 75, 75);
 }
-#instrument7 {
+#move {
     background-image: url(../src/assets/icons.png);
     background-position: -184px -228px;
     background-color: rgb(134, 1, 1);
 }
-#instrument7:hover {
+#move:hover {
     background-color: rgb(75, 75, 75);
 }
-#instrument8 {
+#stroke {
     background-image: url(../src/assets/icons.png);
     background-position: -46px -136px;
     background-color: rgb(47, 47, 47);
 }
-#instrument8:hover {
+#stroke:hover {
     background-color: rgb(75, 75, 75);
 }
-#instrument9 {
+#rectangle {
     background-image: url(../src/assets/icons.png);
     background-position: -182px 0px;
     background-color: rgb(47, 47, 47);
 }
-#instrument9:hover {
+#rectangle:hover {
     background-color: rgb(75, 75, 75);
 }
-#instrument10 {
+#circle {
     background-image: url(../src/assets/icons.png);
     background-position: -228px -46px;
     background-color: rgb(134, 1, 1);
 }
-#instrument10:hover {
+#circle:hover {
     background-color: rgb(75, 75, 75);
 }
-#instrument11 {
+#rectangleSelection {
     background-image: url(../src/assets/icons.png);
     background-position: -182px -46px;
     background-color: rgb(134, 1, 1);
 }
-#instrument11:hover {
+#rectangleSelection:hover {
     background-color: rgb(75, 75, 75);
 }
-#instrument12 {
+#lassoSelection {
     background-image: url(../src/assets/icons.png);
     background-position: -92px -228px;
     background-color: rgb(134, 1, 1);
 }
-#instrument12:hover {
+#lassoSelection:hover {
     background-color: rgb(75, 75, 75);
 }
-#instrument13 {
+#lighten {
     background-image: url(../src/assets/icons.png);
     background-position: -138px -228px;
     background-color: rgb(47, 47, 47);
 }
-#instrument13:hover {
+#lighten:hover {
     background-color: rgb(204, 122, 122);
 }
-#instrument14 {
+#dithering {
     background-image: url(../src/assets/icons.png);
     background-position: 0px -228px;
     background-color: rgb(134, 1, 1);
 }
-#instrument14:hover {
+#dithering:hover {
     background-color: rgb(75, 75, 75);
 }
-#instrument15 {
+#colorPicker {
     background-image: url(../src/assets/icons.png);
     background-position: -274px 0px;
     background-color: rgb(47, 47, 47);
 }
-#instrument15:hover {
+#colorPicker:hover {
     background-color: rgb(75, 75, 75);
 }
 .colorsBox {
@@ -297,6 +297,163 @@ main {
 .color9 {
   background-color: black;
 }
+.keyBoard {
+  width: 36px;
+  height: 21px;
+  background-image: url(../src/assets/icons.png);
+  background-position: -274px -136px;
+  background-color: rgb(47, 47, 47);
+  margin: auto;
+}
+.keyBoardBox {
+  width: 640px;
+  height: 640px;
+  background-color: rgba(1, 1, 1, 0.9);
+  border: 3px solid gold;
+  position: absolute;
+  left: 259px;
+  top: 19px;
+  border-radius: 4px;
+}
+.keyBoardBoxHead {
+  width: 100%;
+  background: gold;
+  color: black;
+  height: 45px;
+  font-size: 1.8em;
+  padding: 10px;
+  margin: 0px;
+  font-weight: bold;
+}
+.keyBoardBoxClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 45px;
+  margin-right: 10px;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+ul{
+  padding: 0px;
+}
+li {
+  width: 100%;
+  height: 38px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Titillium Web', sans-serif;
+
+}
+.LIkeys {
+  border: 2px solid gold;
+  color: gold;
+  line-height: 26px;
+  font-size: 22px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.blink {
+  border: 2px solid red;
+  animation-name: blink;
+   animation-duration: 0.5s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+   animation-play-state: running;
+}
+
+@keyframes blink {
+  from {color: red;}
+  to {color: black;}
+}
+.LIdescription{
+  color: white;
+  line-height: 26px;
+  font-size: 20px;
+  height: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.LIdescription:hover{
+font-weight: bold;
+}
+.image {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  margin: 0px 10px;
+}
+
+.LIpen {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -142px -74px;
+}
+.LIeraser {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -38px -176px;
+}
+.LIverticalMirrorPen {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -3px -108px;
+}
+.LIhorizontalMirrorPen {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -5px -108px;
+  transform: rotate(270deg);
+}
+.LIpaintBucket {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -177px -71px;
+}
+.LIpaintAllPixels {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -177px -109px;
+}
+.LImove {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -142px -176px;
+}
+.LIstroke {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -38px -106px;
+}
+.LIrectangle {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -142px -3px;
+}
+.LIcircle {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -176px -39px;
+}
+.LIrectangleSelection {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -141px -38px;
+}
+.LIlassoSelection {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -73px -176px;
+}
+.LIlighten {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -108px -176px;
+}
+.LIdithering {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -3px -176px;
+}
+.LIcolorPicker {
+  background-image: url(../src/assets/icons1.png);
+  background-position: -212px -3px;
+}
+
+
+
 .center {
   width: 640px;
   height: 640px;

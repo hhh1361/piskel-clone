@@ -183,7 +183,6 @@ export default function frameManagement() {
       if (e.target.id !== 'current') {
         const current = document.getElementById('current');
         const context = mainCanvas.getContext('2d');
-        console.log(canvas.arrayClean);
         canvas.array = JSON.parse(JSON.stringify(instrument.frames[e.target.parentElement.id]));
         context.clearRect(
           0, 0, canvas.array.length * 5, canvas.array.length * 5,
