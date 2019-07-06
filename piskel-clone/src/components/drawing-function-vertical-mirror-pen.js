@@ -1,13 +1,12 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable max-len */
 import { instrument } from './instruments-functions';
-import { canvas } from './canvas-creation-functions';
 
 const drawingFunctionVerticalMirrorPen = function drawingFunctionVerticalMirrorPen() {
   const mouse = { x: 0, y: 0 };
   let draw = false;
   const mainCanvas = document.getElementById('mainCanvas');
-  canvas.canvas = mainCanvas;
+  instrument.canvas = mainCanvas;
   const context = mainCanvas.getContext('2d');
 
   // mousedown event - start drawing
@@ -21,13 +20,13 @@ const drawingFunctionVerticalMirrorPen = function drawingFunctionVerticalMirrorP
 
       for (let i = 0; i < instrument.penSize; i++) {
         for (let j = 0; j < instrument.penSize; j++) {
-          canvas.array[Math.floor(mouse.y / 5) + i][Math.floor(mouse.x / 5) + j] = { color: instrument.currentColor };
+          instrument.array[Math.floor(mouse.y / 5) + i][Math.floor(mouse.x / 5) + j] = { color: instrument.currentColor };
         }
       }
 
       for (let i = 0; i < instrument.penSize; i++) {
         for (let j = 0; j < instrument.penSize; j++) {
-          canvas.array[Math.floor(mouse.y / 5) + i][Math.ceil((canvas.array.length * 5 - mouse.x) / 5) - 1 - j] = { color: instrument.currentColor };
+          instrument.array[Math.floor(mouse.y / 5) + i][Math.ceil((instrument.array.length * 5 - mouse.x) / 5) - 1 - j] = { color: instrument.currentColor };
         }
       }
 
@@ -37,7 +36,7 @@ const drawingFunctionVerticalMirrorPen = function drawingFunctionVerticalMirrorP
       );
 
       context.fillRect(
-        (canvas.array.length - Math.floor(mouse.x / 5)) * 5 - instrument.penSize * 5, Math.floor(mouse.y / 5) * 5, instrument.penSize * 5, instrument.penSize * 5,
+        (instrument.array.length - Math.floor(mouse.x / 5)) * 5 - instrument.penSize * 5, Math.floor(mouse.y / 5) * 5, instrument.penSize * 5, instrument.penSize * 5,
       );
     }
   });
@@ -50,13 +49,13 @@ const drawingFunctionVerticalMirrorPen = function drawingFunctionVerticalMirrorP
 
       for (let i = 0; i < instrument.penSize; i++) {
         for (let j = 0; j < instrument.penSize; j++) {
-          canvas.array[Math.floor(mouse.y / 5) + i][Math.floor(mouse.x / 5) + j] = { color: instrument.currentColor };
+          instrument.array[Math.floor(mouse.y / 5) + i][Math.floor(mouse.x / 5) + j] = { color: instrument.currentColor };
         }
       }
 
       for (let i = 0; i < instrument.penSize; i++) {
         for (let j = 0; j < instrument.penSize; j++) {
-          canvas.array[Math.floor(mouse.y / 5) + i][Math.ceil((canvas.array.length * 5 - mouse.x) / 5) - 1 - j] = { color: instrument.currentColor };
+          instrument.array[Math.floor(mouse.y / 5) + i][Math.ceil((instrument.array.length * 5 - mouse.x) / 5) - 1 - j] = { color: instrument.currentColor };
         }
       }
 
@@ -66,7 +65,7 @@ const drawingFunctionVerticalMirrorPen = function drawingFunctionVerticalMirrorP
       );
 
       context.fillRect(
-        (canvas.array.length - Math.floor(mouse.x / 5)) * 5 - instrument.penSize * 5, Math.floor(mouse.y / 5) * 5, instrument.penSize * 5, instrument.penSize * 5,
+        (instrument.array.length - Math.floor(mouse.x / 5)) * 5 - instrument.penSize * 5, Math.floor(mouse.y / 5) * 5, instrument.penSize * 5, instrument.penSize * 5,
       );
     }
     if (instrument.state === 'verticalMirrorPen') {

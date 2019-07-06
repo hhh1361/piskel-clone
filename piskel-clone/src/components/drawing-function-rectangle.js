@@ -3,7 +3,6 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable max-len */
 import { instrument } from './instruments-functions';
-import { canvas } from './canvas-creation-functions';
 import { paintOver } from './support-functions';
 
 
@@ -50,28 +49,28 @@ const drawingFunctionRectangle = function drawingFunctionRectangle() {
 
       // draw rectangle: vertical lines
       for (let i = 0; i <= rectangle.distanceY; i++) {
-        paintOver(canvas.array, rectangle.vertex.y + i, rectangle.vertex.x, instrument.currentColor);
-        paintOver(canvas.array, rectangle.vertex.y + i, rectangle.vertex.x + rectangle.distanceX, instrument.currentColor);
+        paintOver(instrument.array, rectangle.vertex.y + i, rectangle.vertex.x, instrument.currentColor);
+        paintOver(instrument.array, rectangle.vertex.y + i, rectangle.vertex.x + rectangle.distanceX, instrument.currentColor);
       }
 
       // draw rectangle: horizontal lines
       for (let i = 0; i <= rectangle.distanceX; i++) {
-        paintOver(canvas.array, rectangle.vertex.y, rectangle.vertex.x + i, instrument.currentColor);
-        paintOver(canvas.array, rectangle.vertex.y + rectangle.distanceY, rectangle.vertex.x + i, instrument.currentColor);
+        paintOver(instrument.array, rectangle.vertex.y, rectangle.vertex.x + i, instrument.currentColor);
+        paintOver(instrument.array, rectangle.vertex.y + rectangle.distanceY, rectangle.vertex.x + i, instrument.currentColor);
       }
 
 
       // refresh main canvas
-      canvas.canvas = mainCanvas;
+      instrument.canvas = mainCanvas;
       const context = mainCanvas.getContext('2d');
 
       context.clearRect(
-        0, 0, canvas.array.length * 5, canvas.array.length * 5,
+        0, 0, instrument.array.length * 5, instrument.array.length * 5,
       );
-      for (let i = 0; i < canvas.array.length; i++) {
-        for (let j = 0; j < canvas.array.length; j++) {
-          if (canvas.array[i][j].color !== '?') {
-            context.fillStyle = canvas.array[i][j].color;
+      for (let i = 0; i < instrument.array.length; i++) {
+        for (let j = 0; j < instrument.array.length; j++) {
+          if (instrument.array[i][j].color !== '?') {
+            context.fillStyle = instrument.array[i][j].color;
             context.fillRect(j * 5, i * 5, 5, 5);
           }
         }

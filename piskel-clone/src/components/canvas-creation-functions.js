@@ -1,3 +1,5 @@
+import { instrument } from './instruments-functions';
+
 /* eslint-disable import/no-mutable-exports */
 /* eslint-disable no-plusplus */
 const canvas = {
@@ -42,11 +44,11 @@ const canvasFunctions = function canvasFunctions() {
 
 
         arrayCreator(canvasSize);
-        canvas.canvas = mainCanvas;
-        canvas.array = array;
-        canvas.arrayClean = JSON.parse(JSON.stringify(array));
+        instrument.canvas = mainCanvas;
+        instrument.array = array;
+        instrument.arrayClean = JSON.parse(JSON.stringify(array));
         const size = document.getElementById('canvasSizeInformation');
-        size.innerHTML = ` [${canvas.array.length}x${canvas.array.length}]`;
+        size.innerHTML = ` [${instrument.array.length}x${instrument.array.length}]`;
       }
 
 

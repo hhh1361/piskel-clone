@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import { instrument } from './instruments-functions';
-import { canvas } from './canvas-creation-functions';
 
 const drawingFunctionColorPicker = function drawingFunctionColorPicker() {
   const mouse = { x: 0, y: 0 };
@@ -11,7 +10,7 @@ const drawingFunctionColorPicker = function drawingFunctionColorPicker() {
     if (instrument.state === 'colorPicker') {
       mouse.x = e.pageX - mainCanvas.offsetLeft;
       mouse.y = e.pageY - mainCanvas.offsetTop;
-      const temp = canvas.array[Math.floor(mouse.y / 5)][Math.floor(mouse.x / 5)].color;
+      const temp = instrument.array[Math.floor(mouse.y / 5)][Math.floor(mouse.x / 5)].color;
       instrument.previousColor = instrument.currentColor;
       instrument.currentColor = temp;
       currentColor.style.backgroundColor = instrument.currentColor;

@@ -2,7 +2,6 @@
 /* eslint-disable max-len */
 /* eslint-disable no-plusplus */
 import { instrument } from './instruments-functions';
-import { canvas } from './canvas-creation-functions';
 // eslint-disable-next-line no-unused-vars
 import { refresh, fillRect } from './support-functions';
 
@@ -15,7 +14,7 @@ const drawingFunctionLighten = function drawingFunctionLighten() {
     if (instrument.state === 'lighten') {
       mouse.x = e.pageX - mainCanvas.offsetLeft;
       mouse.y = e.pageY - mainCanvas.offsetTop;
-      const target = canvas.array[Math.floor(mouse.y / 5)][Math.floor(mouse.x / 5)];
+      const target = instrument.array[Math.floor(mouse.y / 5)][Math.floor(mouse.x / 5)];
       const re = /\d+/gi;
       const rgb = target.color.match(re);
       for (let i = 0; i < rgb.length; i++) {
@@ -29,7 +28,7 @@ const drawingFunctionLighten = function drawingFunctionLighten() {
       target.color = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
       for (let i = 0; i < instrument.penSize; i++) {
         for (let j = 0; j < instrument.penSize; j++) {
-          canvas.array[Math.floor(mouse.y / 5) + i][Math.floor(mouse.x / 5) + j] = { color: target.color };
+          instrument.array[Math.floor(mouse.y / 5) + i][Math.floor(mouse.x / 5) + j] = { color: target.color };
           fillRect(ctx, Math.floor(mouse.y / 5) + i, Math.floor(mouse.x / 5) + j, target.color);
         }
       }

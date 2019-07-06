@@ -1,5 +1,5 @@
+/* eslint-disable max-len */
 import { refresh } from './support-functions';
-import { canvas } from './canvas-creation-functions';
 import { instrument } from './instruments-functions';
 
 export default function frameManagement() {
@@ -11,8 +11,8 @@ export default function frameManagement() {
     document.addEventListener('mouseup', function mouseUp() {
       const current = document.getElementById('current');
       const currentContext = current.getContext('2d');
-      refresh(canvas.array, currentContext, 128 / canvas.array.length, canvas.array.length);
-      instrument.frames[`${current.parentElement.id}`] = JSON.parse(JSON.stringify(canvas.array));
+      refresh(instrument.array, currentContext, 128 / instrument.array.length, instrument.array.length);
+      instrument.frames[`${current.parentElement.id}`] = JSON.parse(JSON.stringify(instrument.array));
       document.removeEventListener('mouseup', mouseUp);
     });
   });
@@ -21,10 +21,10 @@ export default function frameManagement() {
   mainCanvas.addEventListener('click', () => {
     const current = document.getElementById('current');
     const currentContext = current.getContext('2d');
-    refresh(canvas.array, currentContext, 128 / canvas.array.length, canvas.array.length);
+    refresh(instrument.array, currentContext, 128 / instrument.array.length, instrument.array.length);
 
 
-    instrument.frames[`${current.parentElement.id}`] = JSON.parse(JSON.stringify(canvas.array));
+    instrument.frames[`${current.parentElement.id}`] = JSON.parse(JSON.stringify(instrument.array));
   });
 
   // add new frame
@@ -32,12 +32,13 @@ export default function frameManagement() {
   addFrame.addEventListener('click', () => {
     const frames = document.getElementById('frames');
     const current = document.getElementById('current');
-    instrument.frames[current.parentElement.id] = JSON.parse(JSON.stringify(canvas.array));
+    instrument.frames[current.parentElement.id] = JSON.parse(JSON.stringify(instrument.array));
     // clear mainCanvas
-    canvas.array = JSON.parse(JSON.stringify(canvas.arrayClean));
+    console.log(instrument);
+    instrument.array = JSON.parse(JSON.stringify(instrument.arrayClean));
     const context = mainCanvas.getContext('2d');
     context.clearRect(
-      0, 0, canvas.array.length * 5, canvas.array.length * 5,
+      0, 0, instrument.array.length * 5, instrument.array.length * 5,
     );
     if (current !== null) {
       current.removeAttribute('id');
@@ -49,7 +50,7 @@ export default function frameManagement() {
     const tmpKeys = Object.keys(instrument.frames);
     frame.id = `frame_${+tmpKeys[tmpKeys.length - 1].match(/\d+/) + 1}`;
     frames.insertBefore(frame, addFrame);
-    instrument.frames[frame.id] = JSON.parse(JSON.stringify(canvas.array));
+    instrument.frames[frame.id] = JSON.parse(JSON.stringify(instrument.array));
 
     // add canvas
     const canv = document.createElement('canvas');
@@ -102,26 +103,26 @@ export default function frameManagement() {
 
           // reapply main canvas
           const context = mainCanvas.getContext('2d');
-          canvas.array = tmpValues[tmpValues.length - 1];
-          refresh(canvas.array, context, 640 / canvas.array.length, canvas.array.length);
+          instrument.array = tmpValues[tmpValues.length - 1];
+          refresh(instrument.array, context, 640 / instrument.array.length, instrument.array.length);
         } else {
           frames.removeChild(e.target.parentNode);
         }
       }
     } else { // if only one frame is presented
       // array clear
-      canvas.array = JSON.parse(JSON.stringify(canvas.arrayClean));
+      instrument.array = JSON.parse(JSON.stringify(instrument.arrayClean));
 
       // main canvas clear
       let context = mainCanvas.getContext('2d');
       context.clearRect(
-        0, 0, canvas.array.length * 5, canvas.array.length * 5,
+        0, 0, instrument.array.length * 5, instrument.array.length * 5,
       );
 
       // frame canvas clear
       context = e.target.parentElement.children[0].getContext('2d');
       context.clearRect(
-        0, 0, canvas.array.length * 5, canvas.array.length * 5,
+        0, 0, instrument.array.length * 5, instrument.array.length * 5,
       );
     }
   });
@@ -149,7 +150,7 @@ export default function frameManagement() {
       canv.height = 128;
       frame.appendChild(canv);
       const ctx = canv.getContext('2d');
-      refresh(instrument.frames[frame.id], ctx, 128 / canvas.array.length, canvas.array.length);
+      refresh(instrument.frames[frame.id], ctx, 128 / instrument.array.length, instrument.array.length);
 
       // add copy div
       const copy = document.createElement('div');
@@ -181,11 +182,11 @@ export default function frameManagement() {
       if (e.target.id !== 'current') {
         const current = document.getElementById('current');
         const context = mainCanvas.getContext('2d');
-        canvas.array = JSON.parse(JSON.stringify(instrument.frames[e.target.parentElement.id]));
+        instrument.array = JSON.parse(JSON.stringify(instrument.frames[e.target.parentElement.id]));
         context.clearRect(
-          0, 0, canvas.array.length * 5, canvas.array.length * 5,
+          0, 0, instrument.array.length * 5, instrument.array.length * 5,
         );
-        refresh(canvas.array, context, 640 / canvas.array.length, canvas.array.length);
+        refresh(instrument.array, context, 640 / instrument.array.length, instrument.array.length);
         current.removeAttribute('id');
         e.target.id = 'current';
       }

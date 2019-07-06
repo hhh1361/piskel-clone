@@ -1,13 +1,12 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable max-len */
 import { instrument } from './instruments-functions';
-import { canvas } from './canvas-creation-functions';
 
 const drawingFunctionEraser = function drawingFunctionEraser() {
   const mouse = { x: 0, y: 0 };
   let draw = false;
   const mainCanvas = document.getElementById('mainCanvas');
-  canvas.canvas = mainCanvas;
+  instrument.canvas = mainCanvas;
   const context = mainCanvas.getContext('2d');
 
   // mousedown event - start erase
@@ -20,10 +19,10 @@ const drawingFunctionEraser = function drawingFunctionEraser() {
 
       for (let i = 0; i < instrument.penSize; i++) {
         for (let j = 0; j < instrument.penSize; j++) {
-          canvas.array[Math.floor(mouse.x / 5) + i][Math.floor(mouse.y / 5) + j].color = '?';
+          instrument.array[Math.floor(mouse.x / 5) + i][Math.floor(mouse.y / 5) + j].color = '?';
         }
       }
-      global.console.log(canvas.array);
+      global.console.log(instrument.array);
 
 
       context.clearRect(
@@ -40,8 +39,8 @@ const drawingFunctionEraser = function drawingFunctionEraser() {
 
       for (let i = 0; i < instrument.penSize; i++) {
         for (let j = 0; j < instrument.penSize; j++) {
-          if (Math.floor(mouse.x / 5) + j < canvas.array.length && Math.floor(mouse.y / 5) + i < canvas.array.length) {
-            canvas.array[Math.floor(mouse.y / 5) + i][Math.floor(mouse.x / 5) + j] = { color: '?' };
+          if (Math.floor(mouse.x / 5) + j < instrument.array.length && Math.floor(mouse.y / 5) + i < instrument.array.length) {
+            instrument.array[Math.floor(mouse.y / 5) + i][Math.floor(mouse.x / 5) + j] = { color: '?' };
           }
         }
       }

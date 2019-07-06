@@ -75,7 +75,7 @@ export default function localStorageFunction() {
       const ctx = canv.getContext('2d');
       // eslint-disable-next-line max-len
       refresh(framesValuesArray[i], ctx, canv.width / framesValuesArray[i].length, framesValuesArray[i].length);
-      canvas.array = JSON.parse(JSON.stringify(framesValuesArray[i]));
+      instrument.array = JSON.parse(JSON.stringify(framesValuesArray[i]));
 
 
       // add copy div
