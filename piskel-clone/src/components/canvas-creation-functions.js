@@ -49,6 +49,8 @@ const canvasFunctions = function canvasFunctions() {
         size.innerHTML = ` [${canvas.array.length}x${canvas.array.length}]`;
       }
 
+
+      // start animation
       const preview = document.getElementById('preview');
       const ctx = preview.getContext('2d');
       let i = 0;

@@ -11,12 +11,12 @@ export function paintOver(array, y, x, colorToFill) {
   }
 }
 
-export function refresh(array, context, n) {
+export function refresh(array, context, n, arrayLength) {
   context.clearRect(
-    0, 0, array.length * n, array.length * n,
+    0, 0, arrayLength * n, arrayLength * n,
   );
-  for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array.length; j++) {
+  for (let i = 0; i < arrayLength; i++) {
+    for (let j = 0; j < arrayLength; j++) {
       if (array[i][j].color !== '?') {
         context.fillStyle = array[i][j].color;
         context.fillRect(j * n, i * n, n, n);

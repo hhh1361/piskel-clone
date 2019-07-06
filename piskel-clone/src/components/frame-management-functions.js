@@ -11,9 +11,7 @@ export default function frameManagement() {
     document.addEventListener('mouseup', function mouseUp() {
       const current = document.getElementById('current');
       const currentContext = current.getContext('2d');
-      refresh(canvas.array, currentContext, 128 / canvas.array.length);
-
-
+      refresh(canvas.array, currentContext, 128 / canvas.array.length, canvas.array.length);
       instrument.frames[`${current.parentElement.id}`] = JSON.parse(JSON.stringify(canvas.array));
       document.removeEventListener('mouseup', mouseUp);
     });
@@ -23,7 +21,7 @@ export default function frameManagement() {
   mainCanvas.addEventListener('click', () => {
     const current = document.getElementById('current');
     const currentContext = current.getContext('2d');
-    refresh(canvas.array, currentContext, 128 / canvas.array.length);
+    refresh(canvas.array, currentContext, 128 / canvas.array.length, canvas.array.length);
 
 
     instrument.frames[`${current.parentElement.id}`] = JSON.parse(JSON.stringify(canvas.array));
@@ -105,7 +103,7 @@ export default function frameManagement() {
           // reapply main canvas
           const context = mainCanvas.getContext('2d');
           canvas.array = tmpValues[tmpValues.length - 1];
-          refresh(canvas.array, context, 5);
+          refresh(canvas.array, context, 640 / canvas.array.length, canvas.array.length);
         } else {
           frames.removeChild(e.target.parentNode);
         }
@@ -151,7 +149,7 @@ export default function frameManagement() {
       canv.height = 128;
       frame.appendChild(canv);
       const ctx = canv.getContext('2d');
-      refresh(instrument.frames[frame.id], ctx, 4);
+      refresh(instrument.frames[frame.id], ctx, 128 / canvas.array.length, canvas.array.length);
 
       // add copy div
       const copy = document.createElement('div');
@@ -187,7 +185,7 @@ export default function frameManagement() {
         context.clearRect(
           0, 0, canvas.array.length * 5, canvas.array.length * 5,
         );
-        refresh(canvas.array, context, 5);
+        refresh(canvas.array, context, 640 / canvas.array.length, canvas.array.length);
         current.removeAttribute('id');
         e.target.id = 'current';
       }

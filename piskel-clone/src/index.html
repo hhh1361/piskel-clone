@@ -98,18 +98,26 @@
         <div class="canvasSize">32</div>
         <div class="canvasSize">64</div>
         <div class="canvasSize">128</div>
+        <div class="continue" id="loadLocal">Continue previous session</div>
       </div>
       <canvas class="mainCanvas" id="mainCanvas"></canvas>
     </div>
 
     <div class="previewContainer" id="previewContainer">
-      <canvas id="preview" width="224" height="224">
+      <canvas id="preview" width="128" height="128">
       </canvas>
-      <div class="fpsContainer" id="fpsContainer">
-        <div class="fpsText">FPS</div>
-        <input type="range" class="fpsRange" min="1" max="24" step="1">
+      <div class="saveLocal" id='saveLocal'>Save in local storage</div>
+      <div class="space">
+
+          <div class="settings">
+              <div class="settingsIcons preferences"></div>
+              <div class="settingsIcons fullscreen" id="fullscreen"></div>
+              <div class="settingsIcons save"></div>
+              <div class="settingsIcons export"></div>
+              <div class="settingsIcons import"></div>
+          </div>
+
       </div>
-      <div class="space"></div>
       <div class="canvasInformation">
         <div class="canvasSizeInformation" id="canvasSizeInformation"></div>
         <div class="cursorCoordinatesInformation" id="cursorCoordinatesInformation"></div>
@@ -117,13 +125,7 @@
 
     </div>
 
-    <div class="settings">
-        <div class="settingsIcons preferences"></div>
-        <div class="settingsIcons fullscreen" id="fullscreen"></div>
-        <div class="settingsIcons save"></div>
-        <div class="settingsIcons export"></div>
-        <div class="settingsIcons import"></div>
-    </div>
+
 
   </main>
 

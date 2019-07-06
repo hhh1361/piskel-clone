@@ -487,6 +487,25 @@ font-weight: bold;
   color:black;
   box-shadow: 2px 2px 1px black;
 }
+.continue {
+  width: 500px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border: 1px solid gray;
+  font-size: 30px;
+  font-family: 'Titillium Web', sans-serif;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+.continue:hover {
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  background-color:white;
+  color:black;
+  box-shadow: 2px 2px 1px black;
+}
 
 
 .mainCanvas {
@@ -577,8 +596,11 @@ font-weight: bold;
 
 .previewContainer {
     margin: 0px 5px;
-    width: 226px;
+    width: 130px;
     height: 640px;
+}
+#preview {
+  border: 1px solid rgba(0, 0, 0, 0.336);
 }
 .fpsContainer {
     display: flex;
@@ -593,6 +615,30 @@ font-weight: bold;
 .fpsRange {
     cursor: pointer;
 }
+.saveLocal {
+  height: 25px;
+  width: 130px;
+  line-height: 25px;
+  font-size: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.096);
+  margin: 5px;
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  border-radius: 5px;
+  color: #888;
+}
+.saveLocal:hover {
+  font-weight: bold;
+  border: 1px solid gold;
+  color: gold;
+}
+.saveLocal:active {
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid gold;
+  color: black;
+}
+
 .space {
   box-sizing: border-box;
   height: 350px;
@@ -613,7 +659,7 @@ font-weight: bold;
 
 .settings {
     width: 50px;
-    margin: auto 5px;
+    margin: 50px auto;
 }
 .settingsIcons {
     width: 50px;
