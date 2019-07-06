@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../dist/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <title>Piskel Clone</title>
+</head>
+<body>
+  <header>
+    <div class="header">
+      <div class="text">PiSKEL</div>
+    </div>
+  </header>
+  <main>
+    <div class="leftSection">
+      <div class="thickness" id="thickness">
+          <div class="penSize"><div class="square" id="square1">1</div></div>
+          <div class="penSize"><div class="square" id="square2">2</div></div>
+          <div class="penSize"><div class="square" id="square3">3</div></div>
+          <div class="penSize"><div class="square" id="square4">4</div></div>
+      </div>
+      <div class="instrumentsContainer" id="instrumentsContainer">
+          <div class="instruments" id="pen">pen</div>
+          <div class="instruments" id="eraser">eraser</div>
+          <div class="instruments" id="verticalMirrorPen">verticalMirrorPen</div>
+          <div class="instruments" id="horizontalMirrorPen">horizontalMirrorPen</div>
+          <div class="instruments" id="paintBucket">paintBucket</div>
+          <div class="instruments" id="paintAllPixels">paintAllPixels</div>
+          <div class="instruments" id="move">move</div>
+          <div class="instruments" id="stroke">stroke</div>
+          <div class="instruments" id="rectangle">rectangle</div>
+          <div class="instruments" id="circle">circle</div>
+          <div class="instruments" id="rectangleSelection">rectangleSelection</div>
+          <div class="instruments" id="lassoSelection">lassoSelection</div>
+          <div class="instruments" id="lighten">lighten</div>
+          <div class="instruments" id="dithering">dithering</div>
+          <div class="instruments" id="colorPicker">colorPicker</div>
+      </div>
+      <div class="colorsBox ">
+        <div id="previousColor">
+            <div class="pallete">
+              <div class="colors color1"></div>
+              <div class="colors color2"></div>
+              <div class="colors color3"></div>
+              <div class="colors color4"></div>
+              <div class="colors color5"></div>
+              <div class="colors color6"></div>
+              <div class="colors color7"></div>
+              <div class="colors color8"></div>
+              <div class="colors color9"></div>
+            </div>
+        </div>
+        <div id="currentColor">
+          <div class="pallete">
+            <div class="colors color1"></div>
+            <div class="colors color2"></div>
+            <div class="colors color3"></div>
+            <div class="colors color4"></div>
+            <div class="colors color5"></div>
+            <div class="colors color6"></div>
+            <div class="colors color7"></div>
+            <div class="colors color8"></div>
+            <div class="colors color9"></div>
+          </div>
+        </div>
+        <div class="swapColor" id="swapColor"></div>
+      </div>
+      <div class="keyBoard" id="keyBoard">
+
+      </div>
+    </div>
+
+    <div class="frameList">
+      <div class="container" id="container">
+        <div class="frames" id="frames">
+          <div class="frame" id="frame_0">
+            <canvas class="canvas canvas_0" id="current" width="128" height="128">
+            </canvas>
+            <div class="framesFunctions copy"></div>
+            <div class="framesFunctions delete"></div>
+            <div class="framesFunctions move"></div>
+            <div class="framesFunctions number">1</div>
+          </div>
+          <div class="addFrame" id="addFrame">
+              Add new frame
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="center" id="center">
+      <div class="canvasSizeTemp" id="canvasSizeTemp">
+        <div class="canvasSizeRequest">
+            What canvas size do you prefer?</div>
+        <div class="canvasSize">32</div>
+        <div class="canvasSize">64</div>
+        <div class="canvasSize">128</div>
+        <div class="continue" id="loadLocal">Continue previous session</div>
+      </div>
+      <canvas class="mainCanvas" id="mainCanvas"></canvas>
+    </div>
+
+    <div class="previewContainer" id="previewContainer">
+      <canvas id="preview" width="128" height="128">
+      </canvas>
+      <div class="saveLocal" id='saveLocal'>Save in local storage</div>
+      <div class="space">
+
+          <div class="settings">
+              <div class="settingsIcons preferences"></div>
+              <div class="settingsIcons fullscreen" id="fullscreen"></div>
+              <div class="settingsIcons save" id="settingsIconSave"></div>
+              <div class="settingsIcons export"></div>
+              <div class="settingsIcons import"></div>
+          </div>
+          <img id="img">
+
+      </div>
+      <div class="canvasInformation">
+        <div class="canvasSizeInformation" id="canvasSizeInformation"></div>
+        <div class="cursorCoordinatesInformation" id="cursorCoordinatesInformation"></div>
+      </div>
+
+    </div>
+
+
+
+  </main>
+
+
+
+
+
+<script type="text/javascript" src="app.bundle.js"></script></body>
+</html>
