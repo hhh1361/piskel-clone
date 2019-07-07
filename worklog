@@ -1,0 +1,20 @@
+| Start   time | End time  | Time spent, h | Feature                                                                             |
+|--------------|-----------|:-------------:|-------------------------------------------------------------------------------------|
+| 8 June       | 22 June   |       15      | base structure of   the project. HTML/CSS prepearing. Installation eslint, webpack. |
+| 22 June      | 23 June   |       4       | add main canvas   creating function.                                                |
+| 23 June      | 24 June   |       2       | add   instruments events.                                                           |
+| 24 June      | 24 June   |       1       | add   color section events.                                                         |
+| 24 June      | 25 June   |       7       | add   drawing-functions Pen/Eraser.                                                 |
+| 25 June      | 26 June   |       2       | add   fullscreen function/ canvas information function.                             |
+| 26 June      | 27 June   |       3       | add   drawing-function Paint all pixels.                                            |
+| 27 June      | 28 June   |       4       | add   drawing functions Vertical mirror / Horizontal mirror / Color picker.         |
+| 28 June      | 29 June   |       6       | add   drawing functions Stroke / Rectangle.                                         |
+| 29 June      | 1  July   |       3       | add   drawing function Lighten.                                                     |
+| 1 July       | 3  July   |       12      | add   Frame management function Choose / Copy / Delete.                             |
+| 3 July       | 5  July   |       6       | add   Keyboard shortcuts and ability to change keys.                                |
+| 5 July       | 6  July   |       8       | add   local storage function. Ability to save session and continue saved session.   |
+| 6 July       | 6  July   |       1       | add   drawing-function Dithering                                                    |
+| 6 July       | 7  July   |       8       | add   GIF export function                                                           |
+
+Total
+| 8 June       | 7  July   |       82      | gh-pages upload                                                                                   |
