@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { instrument } from './instruments-functions';
 
 /* eslint-disable import/no-mutable-exports */
@@ -25,8 +26,8 @@ const canvasFunctions = function canvasFunctions() {
           array[i][j] = { color: '?' };
         }
       }
-      global.console.log(array);
     }
+
 
     // creating 32x32/64x64/128x128 Canvas
     canvasSizeTemp.addEventListener('click', (e) => {
