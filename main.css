@@ -15,6 +15,9 @@ main {
     width: 1440px;
     margin: auto;
 }
+h1 {
+  margin: 5px;
+}
 .leftSection {
     width: 100px;
     margin: auto 5px;
@@ -99,7 +102,7 @@ main {
   font-size: 0pt;
 }
 #pen {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -182px -92px;
     background-color: rgb(47, 47, 47);
 }
@@ -107,7 +110,7 @@ main {
     background-color: rgb(75, 75, 75);
 }
 #eraser {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -46px -228px;
     background-color: rgb(47, 47, 47);
 }
@@ -115,7 +118,7 @@ main {
     background-color: rgb(75, 75, 75);
 }
 #verticalMirrorPen {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: 0px -136px;
     background-color: rgb(47, 47, 47);
 }
@@ -123,7 +126,7 @@ main {
     background-color: rgb(75, 75, 75);
 }
 #horizontalMirrorPen {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: 0px -136px;
     transform: rotate(270deg);
     background-color: rgb(47, 47, 47);
@@ -132,7 +135,7 @@ main {
     background-color: rgb(75, 75, 75);
 }
 #paintBucket {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -227px -88px;
     background-color: rgb(134, 1, 1);
 }
@@ -140,7 +143,7 @@ main {
     background-color: rgb(75, 75, 75);
 }
 #paintAllPixels {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -225px -138px;
     background-color: rgb(47, 47, 47);
 }
@@ -148,7 +151,7 @@ main {
     background-color: rgb(75, 75, 75);
 }
 #move {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -184px -228px;
     background-color: rgb(134, 1, 1);
 }
@@ -156,7 +159,7 @@ main {
     background-color: rgb(75, 75, 75);
 }
 #stroke {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -46px -136px;
     background-color: rgb(47, 47, 47);
 }
@@ -164,7 +167,7 @@ main {
     background-color: rgb(75, 75, 75);
 }
 #rectangle {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -182px 0px;
     background-color: rgb(47, 47, 47);
 }
@@ -172,7 +175,7 @@ main {
     background-color: rgb(75, 75, 75);
 }
 #circle {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -228px -46px;
     background-color: rgb(134, 1, 1);
 }
@@ -180,7 +183,7 @@ main {
     background-color: rgb(75, 75, 75);
 }
 #rectangleSelection {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -182px -46px;
     background-color: rgb(134, 1, 1);
 }
@@ -188,7 +191,7 @@ main {
     background-color: rgb(75, 75, 75);
 }
 #lassoSelection {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -92px -228px;
     background-color: rgb(134, 1, 1);
 }
@@ -196,7 +199,7 @@ main {
     background-color: rgb(75, 75, 75);
 }
 #lighten {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -138px -228px;
     background-color: rgb(47, 47, 47);
 }
@@ -204,7 +207,7 @@ main {
     background-color: rgb(204, 122, 122);
 }
 #dithering {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: 0px -228px;
     background-color: rgb(47, 47, 47);
 }
@@ -212,7 +215,7 @@ main {
     background-color: rgb(75, 75, 75);
 }
 #colorPicker {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -274px 0px;
     background-color: rgb(47, 47, 47);
 }
@@ -251,7 +254,7 @@ main {
 .swapColor {
     width: 20px;
     height: 20px;
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -274px -222px;
     position: absolute;
     top: 50px;
@@ -300,7 +303,7 @@ main {
 .keyBoard {
   width: 36px;
   height: 21px;
-  background-image: url(../src/assets/icons.png);
+  background-image: url(./assets/icons.png);
   background-position: -274px -136px;
   background-color: rgb(47, 47, 47);
   margin: auto;
@@ -391,64 +394,64 @@ font-weight: bold;
 }
 
 .LIpen {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -142px -74px;
 }
 .LIeraser {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -38px -176px;
 }
 .LIverticalMirrorPen {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -3px -108px;
 }
 .LIhorizontalMirrorPen {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -5px -108px;
   transform: rotate(270deg);
 }
 .LIpaintBucket {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -177px -71px;
 }
 .LIpaintAllPixels {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -177px -109px;
 }
 .LImove {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -142px -176px;
 }
 .LIstroke {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -38px -106px;
 }
 .LIrectangle {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -142px -3px;
 }
 .LIcircle {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -176px -39px;
 }
 .LIrectangleSelection {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -141px -38px;
 }
 .LIlassoSelection {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -73px -176px;
 }
 .LIlighten {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -108px -176px;
 }
 .LIdithering {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -3px -176px;
 }
 .LIcolorPicker {
-  background-image: url(../src/assets/icons1.png);
+  background-image: url(./assets/icons1.png);
   background-position: -212px -3px;
 }
 
@@ -524,7 +527,7 @@ font-weight: bold;
 .frame {
     position: relative;
     border-radius: 2px;
-    background: url(../src/assets/frameBackground.png) repeat;
+    background: url(./assets/frameBackground.png) repeat;
     cursor: pointer;
     height: 128px;
     width: 128px;
@@ -538,19 +541,19 @@ font-weight: bold;
 .copy {
     top: 97px;
     left: 97px;
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -274px -76px;
 }
 .delete{
     top: 0px;
     left: 97px;
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -274px -106px;
 }
 .move{
     top: 97px;
     left: 0px;
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -274px -46px;
     display: none;
 }
@@ -671,27 +674,30 @@ font-weight: bold;
 .fullscreen {
   background-color: rgb(47, 47, 47);
 }
+.save {
+  background-color: rgb(47, 47, 47);
+}
 .settingsIcons:hover {
     background-color: rgb(75, 75, 75);
 }
 .preferences {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -46px -182px;
 }
 .fullscreen {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -138px -182px;
 }
 .save {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -228px 0px;
 }
 .export {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: 0px -182px;
 }
 .import {
-    background-image: url(../src/assets/icons.png);
+    background-image: url(./assets/icons.png);
     background-position: -92px -182px;
 }
 
