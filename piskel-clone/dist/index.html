@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../src/main.css">
+    <link rel="stylesheet" href="../dist/main.css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <title>Piskel Clone</title>
 </head>
 <body>
   <header>
     <div class="header">
-      <div class="text">PiSKEL</div>
+      <h1 class="text">PiSKEL</h1>
     </div>
   </header>
   <main>
@@ -23,21 +23,21 @@
           <div class="penSize"><div class="square" id="square4">4</div></div>
       </div>
       <div class="instrumentsContainer" id="instrumentsContainer">
-          <div class="instruments" id="instrument1">pen</div>
-          <div class="instruments" id="instrument2">eraser</div>
-          <div class="instruments" id="instrument3">verticalMirrorPen</div>
-          <div class="instruments" id="instrument4">horizontalMirrorPen</div>
-          <div class="instruments" id="instrument5">paintBucket</div>
-          <div class="instruments" id="instrument6">paintAllPixels</div>
-          <div class="instruments" id="instrument7">move</div>
-          <div class="instruments" id="instrument8">stroke</div>
-          <div class="instruments" id="instrument9">rectangle</div>
-          <div class="instruments" id="instrument10">circle</div>
-          <div class="instruments" id="instrument11">rectangleSelection</div>
-          <div class="instruments" id="instrument12">lassoSelection</div>
-          <div class="instruments" id="instrument13">lighten</div>
-          <div class="instruments" id="instrument14">dithering</div>
-          <div class="instruments" id="instrument15">colorPicker</div>
+          <div class="instruments" id="pen">pen</div>
+          <div class="instruments" id="eraser">eraser</div>
+          <div class="instruments" id="verticalMirrorPen">verticalMirrorPen</div>
+          <div class="instruments" id="horizontalMirrorPen">horizontalMirrorPen</div>
+          <div class="instruments" id="paintBucket">paintBucket</div>
+          <div class="instruments" id="paintAllPixels">paintAllPixels</div>
+          <div class="instruments" id="move">move</div>
+          <div class="instruments" id="stroke">stroke</div>
+          <div class="instruments" id="rectangle">rectangle</div>
+          <div class="instruments" id="circle">circle</div>
+          <div class="instruments" id="rectangleSelection">rectangleSelection</div>
+          <div class="instruments" id="lassoSelection">lassoSelection</div>
+          <div class="instruments" id="lighten">lighten</div>
+          <div class="instruments" id="dithering">dithering</div>
+          <div class="instruments" id="colorPicker">colorPicker</div>
       </div>
       <div class="colorsBox ">
         <div id="previousColor">
@@ -68,6 +68,9 @@
         </div>
         <div class="swapColor" id="swapColor"></div>
       </div>
+      <div class="keyBoard" id="keyBoard">
+
+      </div>
     </div>
 
     <div class="frameList">
@@ -95,18 +98,27 @@
         <div class="canvasSize">32</div>
         <div class="canvasSize">64</div>
         <div class="canvasSize">128</div>
+        <div class="continue" id="loadLocal">Continue previous session</div>
       </div>
       <canvas class="mainCanvas" id="mainCanvas"></canvas>
     </div>
 
     <div class="previewContainer" id="previewContainer">
-      <canvas id="preview" width="224" height="224">
+      <canvas id="preview" width="128" height="128">
       </canvas>
-      <div class="fpsContainer" id="fpsContainer">
-        <div class="fpsText">FPS</div>
-        <input type="range" class="fpsRange" min="1" max="24" step="1">
+      <div class="saveLocal" id='saveLocal'>Save in local storage</div>
+      <div class="space">
+
+          <div class="settings">
+              <div class="settingsIcons preferences"></div>
+              <div class="settingsIcons fullscreen" id="fullscreen"></div>
+              <div class="settingsIcons save" id="settingsIconSave"></div>
+              <div class="settingsIcons export"></div>
+              <div class="settingsIcons import"></div>
+          </div>
+          <img id="img">
+
       </div>
-      <div class="space"></div>
       <div class="canvasInformation">
         <div class="canvasSizeInformation" id="canvasSizeInformation"></div>
         <div class="cursorCoordinatesInformation" id="cursorCoordinatesInformation"></div>
@@ -114,13 +126,7 @@
 
     </div>
 
-    <div class="settings">
-        <div class="settingsIcons preferences"></div>
-        <div class="settingsIcons fullscreen" id="fullscreen"></div>
-        <div class="settingsIcons save"></div>
-        <div class="settingsIcons export"></div>
-        <div class="settingsIcons import"></div>
-    </div>
+
 
   </main>
 

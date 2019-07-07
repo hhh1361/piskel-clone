@@ -34,7 +34,6 @@ export default function frameManagement() {
     const current = document.getElementById('current');
     instrument.frames[current.parentElement.id] = JSON.parse(JSON.stringify(instrument.array));
     // clear mainCanvas
-    console.log(instrument);
     instrument.array = JSON.parse(JSON.stringify(instrument.arrayClean));
     const context = mainCanvas.getContext('2d');
     context.clearRect(
@@ -104,7 +103,7 @@ export default function frameManagement() {
           // reapply main canvas
           const context = mainCanvas.getContext('2d');
           instrument.array = tmpValues[tmpValues.length - 1];
-          refresh(instrument.array, context, 640 / instrument.array.length, instrument.array.length);
+          refresh(instrument.array, context, 5, instrument.array.length);
         } else {
           frames.removeChild(e.target.parentNode);
         }
@@ -186,7 +185,7 @@ export default function frameManagement() {
         context.clearRect(
           0, 0, instrument.array.length * 5, instrument.array.length * 5,
         );
-        refresh(instrument.array, context, 640 / instrument.array.length, instrument.array.length);
+        refresh(instrument.array, context, 5, instrument.array.length);
         current.removeAttribute('id');
         e.target.id = 'current';
       }
