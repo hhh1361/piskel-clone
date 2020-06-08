@@ -1,0 +1,704 @@
+body {
+    background: #1D1D1D;
+    margin : 0;
+    cursor : default;
+    font-family: Arial;
+    color: white;
+  }
+* {
+
+    box-sizing: border-box;
+
+}
+main {
+    display: flex;
+    width: 1440px;
+    margin: auto;
+}
+h1 {
+  margin: 5px;
+}
+.leftSection {
+    width: 100px;
+    margin: auto 5px;
+    z-index: 9999;
+}
+.thickness {
+    display: flex;
+    margin: 5px auto;
+    width: 90px;
+    height: 24px;
+}
+.penSize {
+    width: 20px;
+    height: 20px;
+    border: 2px solid gray;
+    padding: auto;
+    margin: 1px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0pt;
+}
+.penSizeCurrent {
+  width: 20px;
+  height: 20px;
+  border: 2px solid gold;
+  padding: auto;
+  margin: 1px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0pt;
+}
+.penSize:hover {
+    border-color: rgb(201, 201, 201);
+}
+.square {
+    background-color: white;
+    margin: auto;
+    text-align: center;
+}
+.squareCurrent {
+  background-color: gold;
+  margin: auto;
+  text-align: center;
+}
+#square1 {
+    width: 4px;
+    height: 4px;
+}
+#square2 {
+    width: 6px;
+    height: 6px;
+}
+#square3 {
+    width: 8px;
+    height: 8px;
+}
+#square4 {
+    width: 10px;
+    height: 10px;
+}
+.instrumentsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100px;
+}
+.instruments {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    cursor: pointer;
+    font-size: 0pt;
+}
+.instrumentsCurrent {
+  width: 50px;
+  height: 50px;
+  border: 3px solid gold;
+  cursor: pointer;
+  font-size: 0pt;
+}
+#pen {
+    background-image: url(./assets/icons.png);
+    background-position: -182px -92px;
+    background-color: rgb(47, 47, 47);
+}
+#pen:hover {
+    background-color: rgb(75, 75, 75);
+}
+#eraser {
+    background-image: url(./assets/icons.png);
+    background-position: -46px -228px;
+    background-color: rgb(47, 47, 47);
+}
+#eraser:hover {
+    background-color: rgb(75, 75, 75);
+}
+#verticalMirrorPen {
+    background-image: url(./assets/icons.png);
+    background-position: 0px -136px;
+    background-color: rgb(47, 47, 47);
+}
+#verticalMirrorPen:hover {
+    background-color: rgb(75, 75, 75);
+}
+#horizontalMirrorPen {
+    background-image: url(./assets/icons.png);
+    background-position: 0px -136px;
+    transform: rotate(270deg);
+    background-color: rgb(47, 47, 47);
+}
+#horizontalMirrorPen:hover {
+    background-color: rgb(75, 75, 75);
+}
+#paintBucket {
+    background-image: url(./assets/icons.png);
+    background-position: -227px -88px;
+    background-color: rgb(134, 1, 1);
+}
+#paintBucket:hover {
+    background-color: rgb(75, 75, 75);
+}
+#paintAllPixels {
+    background-image: url(./assets/icons.png);
+    background-position: -225px -138px;
+    background-color: rgb(47, 47, 47);
+}
+#paintAllPixels:hover {
+    background-color: rgb(75, 75, 75);
+}
+#move {
+    background-image: url(./assets/icons.png);
+    background-position: -184px -228px;
+    background-color: rgb(134, 1, 1);
+}
+#move:hover {
+    background-color: rgb(75, 75, 75);
+}
+#stroke {
+    background-image: url(./assets/icons.png);
+    background-position: -46px -136px;
+    background-color: rgb(47, 47, 47);
+}
+#stroke:hover {
+    background-color: rgb(75, 75, 75);
+}
+#rectangle {
+    background-image: url(./assets/icons.png);
+    background-position: -182px 0px;
+    background-color: rgb(47, 47, 47);
+}
+#rectangle:hover {
+    background-color: rgb(75, 75, 75);
+}
+#circle {
+    background-image: url(./assets/icons.png);
+    background-position: -228px -46px;
+    background-color: rgb(134, 1, 1);
+}
+#circle:hover {
+    background-color: rgb(75, 75, 75);
+}
+#rectangleSelection {
+    background-image: url(./assets/icons.png);
+    background-position: -182px -46px;
+    background-color: rgb(134, 1, 1);
+}
+#rectangleSelection:hover {
+    background-color: rgb(75, 75, 75);
+}
+#lassoSelection {
+    background-image: url(./assets/icons.png);
+    background-position: -92px -228px;
+    background-color: rgb(134, 1, 1);
+}
+#lassoSelection:hover {
+    background-color: rgb(75, 75, 75);
+}
+#lighten {
+    background-image: url(./assets/icons.png);
+    background-position: -138px -228px;
+    background-color: rgb(47, 47, 47);
+}
+#lighten:hover {
+    background-color: rgb(204, 122, 122);
+}
+#dithering {
+    background-image: url(./assets/icons.png);
+    background-position: 0px -228px;
+    background-color: rgb(47, 47, 47);
+}
+#dithering:hover {
+    background-color: rgb(75, 75, 75);
+}
+#colorPicker {
+    background-image: url(./assets/icons.png);
+    background-position: -274px 0px;
+    background-color: rgb(47, 47, 47);
+}
+#colorPicker:hover {
+    background-color: rgb(75, 75, 75);
+}
+.colorsBox {
+    margin: 20px auto;
+    position: relative;
+    width: 70px;
+    height: 70px;
+}
+#currentColor, #previousColor {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgb(95, 95, 95);
+    background-color: rgb(53, 53, 53);
+    cursor: pointer;
+}
+#currentColor:hover, #previousColor:hover {
+    border: 3px solid rgb(173, 173, 173);
+    box-shadow: inset 0px 0px 10px rgba(119, 119, 119, 0.9);
+}
+#previousColor {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+}
+#currentColor {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+}
+.swapColor {
+    width: 20px;
+    height: 20px;
+    background-image: url(./assets/icons.png);
+    background-position: -274px -222px;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    cursor: pointer;
+}
+.pallete {
+  width: 328px;
+  display: none;
+  flex-direction: row;
+  z-index: 9999;
+  margin-left: 48px;
+}
+.colors {
+  width: 30px;
+  height: 46px;
+  border: 1px solid white;
+}
+.color1 {
+  background-color: white;
+}
+.color2 {
+  background-color: red;
+}
+.color3 {
+  background-color: orange;
+}
+.color4 {
+  background-color: yellow;
+}
+.color5 {
+  background-color: green;
+}
+.color6 {
+  background-color: rgb(0, 217, 255);
+}
+.color7 {
+  background-color: blue;
+}
+.color8 {
+  background-color: rgb(255, 0, 255);
+}
+.color9 {
+  background-color: black;
+}
+.keyBoard {
+  width: 36px;
+  height: 21px;
+  background-image: url(./assets/icons.png);
+  background-position: -274px -136px;
+  background-color: rgb(47, 47, 47);
+  margin: auto;
+}
+.keyBoardBox {
+  width: 640px;
+  height: 640px;
+  background-color: rgba(1, 1, 1, 0.9);
+  border: 3px solid gold;
+  position: absolute;
+  left: 259px;
+  top: 19px;
+  border-radius: 4px;
+}
+.keyBoardBoxHead {
+  width: 100%;
+  background: gold;
+  color: black;
+  height: 45px;
+  font-size: 1.8em;
+  padding: 10px;
+  margin: 0px;
+  font-weight: bold;
+}
+.keyBoardBoxClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 45px;
+  margin-right: 10px;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+ul{
+  padding: 0px;
+}
+li {
+  width: 100%;
+  height: 38px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Titillium Web', sans-serif;
+
+}
+.LIkeys {
+  border: 2px solid gold;
+  color: gold;
+  line-height: 26px;
+  font-size: 22px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.blink {
+  border: 2px solid red;
+  animation-name: blink;
+   animation-duration: 0.5s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+   animation-play-state: running;
+}
+
+@keyframes blink {
+  from {color: red;}
+  to {color: black;}
+}
+.LIdescription{
+  color: white;
+  line-height: 26px;
+  font-size: 20px;
+  height: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.LIdescription:hover{
+font-weight: bold;
+}
+.image {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  margin: 0px 10px;
+}
+
+.LIpen {
+  background-image: url(./assets/icons1.png);
+  background-position: -142px -74px;
+}
+.LIeraser {
+  background-image: url(./assets/icons1.png);
+  background-position: -38px -176px;
+}
+.LIverticalMirrorPen {
+  background-image: url(./assets/icons1.png);
+  background-position: -3px -108px;
+}
+.LIhorizontalMirrorPen {
+  background-image: url(./assets/icons1.png);
+  background-position: -5px -108px;
+  transform: rotate(270deg);
+}
+.LIpaintBucket {
+  background-image: url(./assets/icons1.png);
+  background-position: -177px -71px;
+}
+.LIpaintAllPixels {
+  background-image: url(./assets/icons1.png);
+  background-position: -177px -109px;
+}
+.LImove {
+  background-image: url(./assets/icons1.png);
+  background-position: -142px -176px;
+}
+.LIstroke {
+  background-image: url(./assets/icons1.png);
+  background-position: -38px -106px;
+}
+.LIrectangle {
+  background-image: url(./assets/icons1.png);
+  background-position: -142px -3px;
+}
+.LIcircle {
+  background-image: url(./assets/icons1.png);
+  background-position: -176px -39px;
+}
+.LIrectangleSelection {
+  background-image: url(./assets/icons1.png);
+  background-position: -141px -38px;
+}
+.LIlassoSelection {
+  background-image: url(./assets/icons1.png);
+  background-position: -73px -176px;
+}
+.LIlighten {
+  background-image: url(./assets/icons1.png);
+  background-position: -108px -176px;
+}
+.LIdithering {
+  background-image: url(./assets/icons1.png);
+  background-position: -3px -176px;
+}
+.LIcolorPicker {
+  background-image: url(./assets/icons1.png);
+  background-position: -212px -3px;
+}
+
+
+
+.center {
+  width: 640px;
+  height: 640px;
+  display: flex;
+  flex-direction: column;
+}
+.canvasSizeRequest {
+  font-size: 40px;
+  font-family: 'Titillium Web', sans-serif;
+  width: 541px;
+  height: 40px;
+  line-height: 40px;
+  margin: 50px auto;
+}
+.canvasSize {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border: 1px solid gray;
+  font-size: 30px;
+  font-family: 'Titillium Web', sans-serif;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+.canvasSize:hover {
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  background-color:white;
+  color:black;
+  box-shadow: 2px 2px 1px black;
+}
+.continue {
+  width: 500px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border: 1px solid gray;
+  font-size: 30px;
+  font-family: 'Titillium Web', sans-serif;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+.continue:hover {
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  background-color:white;
+  color:black;
+  box-shadow: 2px 2px 1px black;
+}
+
+
+.mainCanvas {
+  box-shadow: 0px 0px 10px 0px rgb(209, 208, 162);
+  opacity: 0;
+}
+
+
+
+
+
+
+.frameList {
+    margin: 0 5px;
+}
+.frame {
+    position: relative;
+    border-radius: 2px;
+    background: url(./assets/frameBackground.png) repeat;
+    cursor: pointer;
+    height: 128px;
+    width: 128px;
+    margin: 3px;
+}
+.framesFunctions {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+.copy {
+    top: 97px;
+    left: 97px;
+    background-image: url(./assets/icons.png);
+    background-position: -274px -76px;
+}
+.delete{
+    top: 0px;
+    left: 97px;
+    background-image: url(./assets/icons.png);
+    background-position: -274px -106px;
+}
+.move{
+    top: 97px;
+    left: 0px;
+    background-image: url(./assets/icons.png);
+    background-position: -274px -46px;
+    display: none;
+}
+.number{
+    top: 0px;
+    left: 0px;
+    line-height: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    display: none;
+}
+
+.addFrame {
+    width: 128px;
+    height: 50px;
+    margin: 8px auto 0px auto;
+    border: #888 solid 3px;
+    border-radius: 4px;
+    color: #888;
+    background-color: #222;
+    font-size: 17px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+}
+.addFrame:hover {
+    border: 3px solid gold;
+}
+
+#current {
+
+  border: 1px solid gold;
+  border-radius: 3px;
+}
+
+
+
+
+.center {
+    background-color: #222;
+    margin: auto 5px;
+}
+
+.previewContainer {
+    margin: 0px 5px;
+    width: 130px;
+    height: 640px;
+}
+#preview {
+  border: 1px solid rgba(0, 0, 0, 0.336);
+}
+.fpsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.fpsText {
+    font-family: Arial;
+    font-size: 15px;
+}
+.fpsRange {
+    cursor: pointer;
+}
+.saveLocal {
+  height: 25px;
+  width: 130px;
+  line-height: 25px;
+  font-size: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.096);
+  margin: 5px;
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  border-radius: 5px;
+  color: #888;
+}
+.saveLocal:hover {
+  font-weight: bold;
+  border: 1px solid gold;
+  color: gold;
+}
+.saveLocal:active {
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid gold;
+  color: black;
+}
+
+.space {
+  box-sizing: border-box;
+  height: 350px;
+}
+.canvasInformation {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  color: gold;
+  font-size: 12px;
+  line-height: 30px;
+  font-weight: 800;
+  font-family: 'Titillium Web', sans-serif;
+}
+.cursorCoordinatesInformation{
+  margin-left: 10px;
+}
+
+.settings {
+    width: 50px;
+    margin: 50px auto;
+}
+.settingsIcons {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(47, 47, 47);
+    background-color: rgb(134, 1, 1);
+    border: 1px solid rgba(255, 255, 255, 0.096);
+}
+.fullscreen {
+  background-color: rgb(47, 47, 47);
+}
+.save {
+  background-color: rgb(47, 47, 47);
+}
+.settingsIcons:hover {
+    background-color: rgb(75, 75, 75);
+}
+.preferences {
+    background-image: url(./assets/icons.png);
+    background-position: -46px -182px;
+}
+.fullscreen {
+    background-image: url(./assets/icons.png);
+    background-position: -138px -182px;
+}
+.save {
+    background-image: url(./assets/icons.png);
+    background-position: -228px 0px;
+}
+.export {
+    background-image: url(./assets/icons.png);
+    background-position: 0px -182px;
+}
+.import {
+    background-image: url(./assets/icons.png);
+    background-position: -92px -182px;
+}
+
+
