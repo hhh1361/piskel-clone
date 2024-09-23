@@ -3,6 +3,6 @@
 ## https://hhh1361.github.io/piskel-clone/
 ---
 
-Pet project inspired by https://www.piskelapp.com/.  
+Vanilla js pet project inspired by https://www.piskelapp.com/.  
 
 **TO BE CONTINUED...**
